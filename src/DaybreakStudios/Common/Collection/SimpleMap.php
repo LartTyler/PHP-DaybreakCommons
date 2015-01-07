@@ -1,10 +1,8 @@
 <?php
 	namespace DaybreakStudios\Common\Collection;
 
-	abstract class AbstractMap implements Map {
-		private $entries = array();
-
-		protected function __construct() {}
+	class SimpleMap implements Map {
+		protected $entries = array();
 
 		public function clear() {
 			$this->entries = array();
@@ -65,10 +63,15 @@
 				$entry = new SimpleEntry($key, $value);
 
 				$this->entries[] = $entry;
-			} else
-				$entry->setValue($value);
 
-			return $e->getValue();
+				return null;
+			}
+
+			$orig = $entry->getValue();
+
+			$entry->setValue($value);
+
+			return $orig;
 		}
 
 		public function putAll(Map $map) {
