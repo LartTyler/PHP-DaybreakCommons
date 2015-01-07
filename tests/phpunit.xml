@@ -1,0 +1,10 @@
+<phpunit bootstrap="../vendor/autoload.php">
+	<testsuites>
+		<testsuite name="SimpleMap">
+			<file>SimpleMapTest.php</file>
+		</testsuite>
+		<testsuite name="EnumMap">
+			<file>EnumMapTest.php</file>
+		</testsuite>
+	</testsuites>
+</phpunit>

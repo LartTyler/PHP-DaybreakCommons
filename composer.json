@@ -1,0 +1,27 @@
+{
+	"name": "dbstudios/php-commons",
+	"description": "A collection of common PHP files that are used between many projects",
+	"authors": [
+		{
+			"name": "Tyler Lartonoix",
+			"email": "overlordcodemonkey@live.com"
+		}
+	],
+	"type": "library",
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://packages.scend.net"
+		}
+	],
+	"require": {
+		"php": ">= 5.3.0",
+		"dbstudios/php-enum": "~2.0",
+		"phpunit/phpunit": "4.4.*"
+	},
+	"autoload": {
+		"psr-4": {
+			"DaybreakStudios\\": "src/DaybreakStudios"
+		}
+	}
+}
