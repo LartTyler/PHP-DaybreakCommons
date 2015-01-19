@@ -9,12 +9,8 @@
 		private $class;
 
 		public function __construct($class) {
-			if (!is_string($class))
-				throw new InvalidArgumentException('$class must be a fully-qualified class name.');
-			else if (!class_exists($class))
-				throw new InvalidArgumentException(sprintf('Class %1$s does not exist. Please load %1$ first.', $class));
-			else if (!is_subclass_of($class, 'DaybreakStudios\Enum\Enum'))
-				throw new InvalidArgumentException(sprintf('%s is not an instance of DaybreakStudios\Enum\Enum.', $class));
+			if (!$this->isEnumClass($class))
+				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Enum\Enum.');
 
 			$this->class = $class;
 		}
@@ -88,6 +84,13 @@
 
 		private function isEnum($val) {
 			return is_object($val) && $val instanceof $this->class;
+		}
+
+		private function isEnumClass($class) {
+			if (!is_string($class) || !class_exists($class) || !is_subclass_of($class, 'DaybreakStudios\Enum\Enum'))
+				return false;
+
+			return true;
 		}
 	}
 ?>

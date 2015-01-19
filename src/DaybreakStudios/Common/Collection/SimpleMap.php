@@ -1,6 +1,8 @@
 <?php
 	namespace DaybreakStudios\Common\Collection;
 
+	use \UnexpectedValueException;
+
 	class SimpleMap implements Map {
 		protected $entries = array();
 
@@ -101,6 +103,18 @@
 				$values[] = $entry->getValue();
 
 			return $values;
+		}
+
+		public function toArray() {
+			$array = array();
+
+			foreach ($this->entries as $entry)
+				if (!is_scalar($entry->getKey()))
+					throw new UnexpectedValueException('This map contains object keys, and arrays do not support non-scalar key values.');
+				else
+					$array[$entry->getKey()] = $entry->getValue();
+
+			return $array;
 		}
 	}
 ?>

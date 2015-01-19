@@ -14,5 +14,6 @@
 		public function remove($key);
 		public function size();
 		public function values();
+		public function toArray();
 	}
 ?>
