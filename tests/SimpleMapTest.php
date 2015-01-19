@@ -103,5 +103,28 @@
 
 			$this->assertEquals($map->values(), $values);
 		}
+
+		public function testToArray() {
+			$map = new SimpleMap();
+
+			$map->put('test', 'value');
+			$map->put('test2', 'value2');
+
+			$this->assertEquals($map->toArray(), array(
+				'test' => 'value',
+				'test2' => 'value2',
+			));
+		}
+
+		/**
+		 * @expectedException UnexpectedValueException
+		 */
+		public function testToArrayWithObjectKeys() {
+			$map = new SimpleMap();
+
+			$map->put(new stdClass(), 'value');
+
+			$map->toArray();
+		}
 	}
 ?>
