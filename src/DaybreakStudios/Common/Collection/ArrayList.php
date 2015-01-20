@@ -6,7 +6,7 @@
 	use \OutOfBoundsException;
 
 	class ArrayList implements CollectionList {
-		private $elements;
+		protected $elements;
 
 		public function __construct(array $array = array()) {
 			$this->elements = array_values($array);
