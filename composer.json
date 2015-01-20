@@ -8,12 +8,6 @@
 		}
 	],
 	"type": "library",
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "http://packages.scend.net"
-		}
-	],
 	"require": {
 		"php": ">= 5.3.0"
 	},
