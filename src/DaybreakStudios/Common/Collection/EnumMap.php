@@ -3,14 +3,14 @@
 
 	use \InvalidArgumentException;
 
-	use DaybreakStudios\Enum\Enum;
+	use DaybreakStudios\Common\Enum\Enum;
 
 	class EnumMap extends SimpleMap {
 		private $class;
 
 		public function __construct($class) {
 			if (!$this->isEnumClass($class))
-				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Enum\Enum.');
+				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
 
 			$this->class = $class;
 		}
@@ -87,7 +87,7 @@
 		}
 
 		private function isEnumClass($class) {
-			if (!is_string($class) || !class_exists($class) || !is_subclass_of($class, 'DaybreakStudios\Enum\Enum'))
+			if (!is_string($class) || !class_exists($class) || !is_subclass_of($class, 'DaybreakStudios\Common\Enum\Enum'))
 				return false;
 
 			return true;
