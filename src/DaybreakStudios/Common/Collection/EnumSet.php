@@ -30,7 +30,7 @@
 
 		public function add($e) {
 			if (!EnumUtil::isEnum($e, $this->class))
-				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
+				throw new InvalidArgumentException(sprintf('Element must be an instance of %s.', $this->class));
 
 			if ($this->contains($e))
 				return false;
@@ -44,7 +44,7 @@
 
 		public function contains($e) {
 			if (!EnumUtil::isEnum($e, $this->class))
-				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
+				throw new InvalidArgumentException(sprintf('Element must be an instance of %s.', $this->class));
 
 			return ($this->elements & $this->universe[$e->ordinal()]) !== 0;
 		}
@@ -55,7 +55,7 @@
 
 		public function remove($e) {
 			if (!EnumUtil::isEnum($e, $this->class))
-				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
+				throw new InvalidArgumentException(sprintf('Element must be an instance of %s.', $this->class));
 
 			if (!$this->contains($e))
 				return false;
