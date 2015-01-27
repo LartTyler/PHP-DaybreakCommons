@@ -1,5 +1,5 @@
 <?php
-	use DaybreakStudios\Enum\Enum;
+	use DaybreakStudios\Common\Enum\Enum;
 	use DaybreakStudios\Common\Collection\EnumMap;
 
 	class EnumMapTest extends PHPUnit_Framework_TestCase {
