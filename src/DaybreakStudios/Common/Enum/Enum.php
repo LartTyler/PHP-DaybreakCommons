@@ -26,7 +26,7 @@
 		 * @param string $name 		the name of the enum being registered
 		 * @param mixed $ctor,... 	zero or more arguments to be passed to the enum's constructor
 		 */
-		public static function register($name, $ctor = null) {
+		protected static function register($name, $ctor = null) {
 			$key = get_called_class();
 
 			if (self::isRegistrationHalted($key))
@@ -168,7 +168,7 @@
 		/**
 		 * Prevents any new enum elements from being registered under a particular enum.
 		 */
-		public static final function stopRegistration() {
+		protected static final function stopRegistration() {
 			$key = get_called_class();
 
 			if (self::isRegistrationHalted($key))
