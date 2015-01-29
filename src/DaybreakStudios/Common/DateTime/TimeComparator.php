@@ -24,6 +24,8 @@
 				->setDate(2015, 01, 01)
 				->setTimezone($tz);
 
+			$diff = $a->getTimestamp() - $b->getTimestamp();
+
 			if ($diff < 0)
 				return -1;
 			else if ($diff === 0)
