@@ -1,6 +1,8 @@
 <?php
 	namespace DaybreakStudios\Common\DateTime;
 
+	use \DateTimeZone;
+
 	class TimeComparator extends AbstractDateTimeAwareComparator {
 		public function __construct() {
 			parent::__construct();
@@ -10,12 +12,17 @@
 			if (!$this->accepts($a) || !$this->accepts($b))
 				throw new InvalidArgumentException('Both arguments must be DateTime objects');
 
-			list($a, $b) = $this->copyAndNormalize($a, $b);
+			$tz = new DateTimeZone('UTC');
 
-			$a->setDate(2015, 01, 01);
-			$b->setDate(2015, 01, 01);
+			$a = clone $a;
+			$a
+				->setDate(2015, 01, 01)
+				->setTimezone($tz);
 
-			$diff = $a->getTimestamp() - $b->getTimestamp();
+			$b = clone $b;
+			$b
+				->setDate(2015, 01, 01)
+				->setTimezone($tz);
 
 			if ($diff < 0)
 				return -1;
