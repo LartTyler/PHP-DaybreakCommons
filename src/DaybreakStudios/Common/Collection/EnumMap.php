@@ -4,26 +4,27 @@
 	use \InvalidArgumentException;
 
 	use DaybreakStudios\Common\Enum\Enum;
+	use DaybreakStudios\Common\Enum\EnumUtil;
 
 	class EnumMap extends SimpleMap {
 		private $class;
 
 		public function __construct($class) {
-			if (!$this->isEnumClass($class))
+			if (!EnumUtil::isEnumClass($class))
 				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
 
 			$this->class = $class;
 		}
 
 		public function containsKey($key) {
-			if (!$this->isEnum($key))
+			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
 			return isset($this->entries[$key->ordinal()]);
 		}
 
 		public function get($key, $def = null) {
-			if (!$this->isEnum($key))
+			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
 			if (isset($this->entries[$key->ordinal()]))
@@ -33,7 +34,7 @@
 		}
 
 		public function put($key, $value) {
-			if (!$this->isEnum($key))
+			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
 			$entry = null;
@@ -69,7 +70,7 @@
 		}
 
 		public function remove($key) {
-			if (!$this->isEnum($key))
+			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
 			if (!isset($this->entries[$key->ordinal()]))
@@ -80,17 +81,6 @@
 			unset($this->entries[$key->ordinal()]);
 
 			return $entry->getValue();
-		}
-
-		private function isEnum($val) {
-			return is_object($val) && $val instanceof $this->class;
-		}
-
-		private function isEnumClass($class) {
-			if (!is_string($class) || !class_exists($class) || !is_subclass_of($class, 'DaybreakStudios\Common\Enum\Enum'))
-				return false;
-
-			return true;
 		}
 	}
 ?>
