@@ -1,7 +1,7 @@
 <?php
 	namespace DaybreakStudios\Common\Enum\TwigCompat;
 
-	use DaybreakStudios\Enum\Enum;
+	use DaybreakStudios\Common\Enum\Enum;
 
 	class EnumWrapper {
 		private $values = array();
