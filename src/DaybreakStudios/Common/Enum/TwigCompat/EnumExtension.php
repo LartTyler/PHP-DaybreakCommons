@@ -4,6 +4,8 @@
 	use \InvalidArgumentException;
 	use \Twig_Extension;
 
+	use DaybreakStudios\Common\Enum\EnumUtil;
+
 	class EnumExtension extends Twig_Extension {
 		private $enums = array();
 
