@@ -34,7 +34,7 @@
 			return $this->alt;
 		}
 
-		public static function init() {
+		protected static function init() {
 			parent::register('A', 'a');
 
 			parent::stopRegistration();
@@ -42,7 +42,7 @@
 	}
 
 	class TestEnumNoConstruct extends Enum {
-		public static function init() {
+		protected static function init() {
 			parent::register('Z');
 
 			parent::stopRegistration();
