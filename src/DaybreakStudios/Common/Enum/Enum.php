@@ -198,12 +198,15 @@
 		 * @internal
 		 */
 		public static final function __callStatic($method, $args) {
+			if (method_exists('DaybreakStudios\Common\Enum\Enum', $method))
+				return self::$method();
+
 			$key = get_called_class();
 
 			if ($key === 'DaybreakStudios\Common\Enum\Enum')
 				throw new Exception(sprintf('Cannot access %s of Enum parent class.', $method));
 
-			if (EnumUtil::isEnumClass($key) && !isset(self::$types[$key]))
+			if (!isset(self::$types[$key]))
 				$key::init();
 
 			if (isset(self::$types[$key][$method]))
