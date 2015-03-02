@@ -188,7 +188,7 @@
 			return in_array($name, self::$haltRegistration);
 		}
 
-		public static function init() {
+		protected static function init() {
 			static::stopRegistration();
 		}
 
