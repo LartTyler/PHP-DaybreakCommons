@@ -24,9 +24,9 @@
 		 * of whichever enum is being registered to.
 		 *
 		 * @param string $name 		the name of the enum being registered
-		 * @param mixed $ctor,... 	zero or more arguments to be passed to the enum's constructor
+		 * @param mixed $ctors,... 	zero or more arguments to be passed to the enum's constructor
 		 */
-		protected static function register($name, $ctor = null) {
+		protected static function register($name, ... $ctors) {
 			$key = get_called_class();
 
 			if (self::isRegistrationHalted($key))
@@ -36,13 +36,10 @@
 			if (!array_key_exists($key, self::$types))
 				self::$types[$key] = array();
 
-			$args = array();
+			// $refl = new ReflectionClass($key);
+			// $inst = $refl->newInstanceArgs($args);
 
-			for ($i = 1; $i < func_num_args(); $i++)
-				$args[] = func_get_arg($i);
-
-			$refl = new ReflectionClass($key);
-			$inst = $refl->newInstanceArgs($args);
+			$inst = new $key(... $ctors);
 
 			$inst->setName($name);
 			$inst->setOrdinal(sizeof(self::$types[$key]));
@@ -53,9 +50,7 @@
 		/**
 		 * @internal
 		 */
-		private function __construct($name) {
-			$this->name = $name;
-		}
+		protected function __construct() {}
 
 		/**
 		 * Gets the name of an enum element.
@@ -205,10 +200,13 @@
 		public static final function __callStatic($method, $args) {
 			$key = get_called_class();
 
-			if ($key === 'Enum')
-				throw new Exception(sprintf('Cannot access %s of Enum parent class.', $key));
+			if ($key === 'DaybreakStudios\Common\Enum\Enum')
+				throw new Exception(sprintf('Cannot access %s of Enum parent class.', $method));
 
-			if (array_key_exists($method, self::$types[$key]))
+			if (EnumUtil::isEnumClass($key) && !isset(self::$types[$key]))
+				$key::init();
+
+			if (isset(self::$types[$key][$method]))
 				return self::$types[$key][$method];
 
 			throw new Exception(sprintf('No property %s found in %s.', $method, $key));
