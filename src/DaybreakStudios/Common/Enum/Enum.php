@@ -23,8 +23,8 @@
 		 * names the element being added. Any arguments following the first will be passed, in order, to the constructor
 		 * of whichever enum is being registered to.
 		 *
-		 * @param string $name 		the name of the enum being registered
-		 * @param mixed $ctors,... 	zero or more arguments to be passed to the enum's constructor
+		 * @param string $name 			the name of the enum being registered
+		 * @param mixed  $ctors,... 	zero or more arguments to be passed to the enum's constructor
 		 */
 		protected static function register($name, ... $ctors) {
 			$key = get_called_class();
@@ -35,9 +35,6 @@
 
 			if (!array_key_exists($key, self::$types))
 				self::$types[$key] = array();
-
-			// $refl = new ReflectionClass($key);
-			// $inst = $refl->newInstanceArgs($args);
 
 			$inst = new $key(... $ctors);
 
@@ -181,13 +178,26 @@
 		 * @param  string  $name optional; if set, it is the name of the enum to look up
 		 * @return boolean       true if Enum::stopRegistration has been called by the enum, false otherwise
 		 */
-		public static final function isRegistrationHalted($name = null) {
+		public static final function isRegistrationStopped($name = null) {
 			if ($name === null)
 				$name = get_called_class();
 
-			return in_array($name, self::$haltRegistration);
+			return in_array($name, self::$stopRegistration);
 		}
 
+		/**
+		 * @deprecated use of isRegistrationStopped is preferred for naming consistancy
+		 * @see isRegistrationStopped
+		 */
+		public static final function isRegistrationHalted($name = null) {
+			return self::isRegistrationStopped($name);
+		}
+
+		/**
+		 * Initializes the values of an enum.
+		 *
+		 * This method should ALWAYS be overridden when extending Enum.
+		 */
 		protected static function init() {
 			static::stopRegistration();
 		}
