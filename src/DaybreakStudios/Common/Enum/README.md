@@ -27,7 +27,7 @@ That's all fine and dandy, but what happens when I need more information than ju
 to store their diameter and their distance from our sun? And Great Codemonkey forbid I want a way to keep track of all
 their moons too!
 
-Queue "blah blah databases blah blah extendability." There are some things that are too simple to store in a
+Cue the generic "blah blah databases blah blah extendability." There are some things that are too simple to store in a
 database, but too complicated to store in simple class constants. Thus, my implementation of enums in PHP was born.
 
 To oversimplify things, Java enums are nothing more than a class that has a private constructor, and has a built-in way
