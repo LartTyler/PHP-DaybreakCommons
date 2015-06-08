@@ -127,6 +127,12 @@
 	<h1>Interface Set</h1>
 
 
+	<div class="description">
+	<p>Base interface for most objects in the Collections library.</p>
+
+<p>Not all methods defined in this interface are required in child classes. Any methods without an implementation
+should throw a BadMethodCallException to denote unsupported operations.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -181,19 +187,13 @@
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_clear">clear()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_contains">contains()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_containsAll">containsAll()</a></code>, 
+				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_getIterator">getIterator()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_isEmpty">isEmpty()</a></code>, 
-				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_iterator">iterator()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_remove">remove()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_removeAll">removeAll()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_retainAll">retainAll()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_size">size()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_toArray">toArray()</a></code>
-			</p>
-		</div>
-		<div class="panel panel-default">
-	        <div class="panel-heading"><h3>Methods inherited from IteratorAggregate</h3></div>
-			<p class="elementList">
-				<code>getIterator()</code>
 			</p>
 		</div>
 

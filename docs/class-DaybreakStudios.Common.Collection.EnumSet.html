@@ -127,6 +127,12 @@
 	<h1>Class EnumSet</h1>
 
 
+	<div class="description">
+	<p>Base interface for most objects in the Collections library.</p>
+
+<p>Not all methods defined in this interface are required in child classes. Any methods without an implementation
+should throw a BadMethodCallException to denote unsupported operations.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -202,25 +208,40 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_add">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#31-39" title="Go to source code">add</a>( <span> <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#31-39" title="Go to source code">add</a>( <span>mixed <var>$e</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Ensures that this collection contains the given element (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Ensures that this collection contains the given element (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$e</var></dt>
+						<dd>the element to add</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection changed as a result of this call, false otherwise
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>add</code> operation is not supported<br>
+						InvalidArgumentException<br><p>if some property of the element prevented it from being added to this
+        collection (such as type).</p>
+					</div>
 
 
 					<h4>Overrides</h4>
@@ -243,15 +264,21 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#41-43" title="Go to source code">clear</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Removes all elements from this collection (optional operation). This collection will be empty following this
+call.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes all elements from this collection (optional operation). This collection will be empty following this
+call.</p>
 
 
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>clear</code> operation is not supported
+					</div>
 
 
 					<h4>Overrides</h4>
@@ -264,24 +291,33 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_contains">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#45-50" title="Go to source code">contains</a>( <span> <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#45-50" title="Go to source code">contains</a>( <span>mixed <var>$e</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this collection contains the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this collection contains the given element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$e</var></dt>
+						<dd>the element to test for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection contains the element
+					</div>
 
 
 
@@ -326,25 +362,38 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_remove">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#56-66" title="Go to source code">remove</a>( <span> <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#56-66" title="Go to source code">remove</a>( <span>mixed <var>$e</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Removes a single instance of an object from this collection, if it is present (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes a single instance of an object from this collection, if it is present (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$e</var></dt>
+						<dd>the element to remove from this collection, if present</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection changed as a result of this call
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>remove</code> operation is not supported
+					</div>
 
 
 					<h4>Overrides</h4>
@@ -357,7 +406,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				integer
 				
 				</code>
 			</td>
@@ -367,14 +416,18 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#68-76" title="Go to source code">size</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns the number of elements contained in this collection.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the number of elements contained in this collection.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>the number of elements in this collection
+					</div>
 
 
 
@@ -388,7 +441,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				array
 				
 				</code>
 			</td>
@@ -398,14 +451,22 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#78-86" title="Go to source code">toArray</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns an array containing all of the elements in this collection. If the implementation makes an guarantees
+as to what order the elements are returned by it's iterator, this method must return the elements in the same
+order.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns an array containing all of the elements in this collection. If the implementation makes an guarantees
+as to what order the elements are returned by it's iterator, this method must return the elements in the same
+order.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>an array containing all elements in this collection
+					</div>
 
 
 
