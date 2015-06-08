@@ -7,7 +7,7 @@
 	use \ReflectionClass;
 
 	abstract class Enum {
-		private static $haltRegistration = array();
+		private static $stopped = array();
 		private static $types = array();
 
 		private $name;
@@ -158,15 +158,27 @@
 		}
 
 		/**
-		 * Prevents any new enum elements from being registered under a particular enum.
+		 * @deprecated use the more succinct `done` method instead
+		 * See @see done()
 		 */
 		protected static final function stopRegistration() {
-			$key = get_called_class();
+			self::done(get_called_class());
+		}
 
-			if (self::isRegistrationHalted($key))
+		/**
+		 * Prevents any new enum elements from being registered under a particular enum.
+		 *
+		 * @param string $name optional; if set, it is the name of the enum to stop registration for (used for
+		 *                     forwarding calls from @see stopRegistration())
+		 */
+		protected static final function done($name = null) {
+			if ($name === null)
+				$name = get_called_class();
+
+			if (self::isRegistrationStopped($name))
 				return;
 
-			self::$haltRegistration[] = $key;
+			self::$stopped[] = $name;
 		}
 
 		/**
@@ -176,9 +188,9 @@
 		 * it's named will be determined via get_called_class().
 		 *
 		 * @param  string  $name optional; if set, it is the name of the enum to look up
-		 * @return boolean       true if Enum::stopRegistration has been called by the enum, false otherwise
+		 * @return boolean       true if Enum::done has been called by the enum, false otherwise
 		 */
-		public static final function isRegistrationStopped($name = null) {
+		public static final function isDone($name = null) {
 			if ($name === null)
 				$name = get_called_class();
 
@@ -186,11 +198,11 @@
 		}
 
 		/**
-		 * @deprecated use of isRegistrationStopped is preferred for naming consistancy
-		 * @see isRegistrationStopped
+		 * @deprecated use of isDone is preferred for naming consistency
+		 * See @see isDone()
 		 */
-		public static final function isRegistrationHalted($name = null) {
-			return self::isRegistrationStopped($name);
+		public static final function isRegistrationStopped($name = null) {
+			return self::isDone($name);
 		}
 
 		/**
