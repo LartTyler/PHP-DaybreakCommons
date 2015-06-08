@@ -47,7 +47,7 @@
 		}
 
 		/**
-		 * @internal
+		 * @internal stub constructor in case child enums don't implement a constructor
 		 */
 		protected function __construct() {}
 
@@ -171,7 +171,9 @@
 		}
 
 		/**
-		 * Prevents any new enum elements from being registered under a particular enum.
+		 * Internal use only. Prevents any new enum elements from being registered under the current enum.
+		 *
+		 * @internal
 		 */
 		protected static final function done() {
 			$name = get_called_class();
