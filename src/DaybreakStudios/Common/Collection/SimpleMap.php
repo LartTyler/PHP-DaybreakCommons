@@ -4,10 +4,17 @@
 	use \UnexpectedValueException;
 
 	class SimpleMap implements Map {
-		protected $entries = array();
+		protected $entries;
+
+		public function __construct(Map $map = null) {
+			$this->entries = new SimpleSet();
+
+			if ($map !== null)
+				$this->putAll($map);
+		}
 
 		public function clear() {
-			$this->entries = array();
+			$this->entries = new SimpleSet();
 		}
 
 		public function containsKey($key) {
@@ -43,10 +50,10 @@
 		}
 
 		public function keySet() {
-			$keys = array();
+			$keys = new SimpleSet();
 
 			foreach ($this->entries as $entry)
-				$keys[] = $entry->getKey();
+				$keys->add($entry->getKey());
 
 			return $keys;
 		}
@@ -64,7 +71,7 @@
 			if ($entry === null) {
 				$entry = new SimpleEntry($key, $value);
 
-				$this->entries[] = $entry;
+				$this->entries->add($entry);
 
 				return null;
 			}
@@ -82,9 +89,9 @@
 		}
 
 		public function remove($key) {
-			foreach ($this->entries as $i => $entry)
+			foreach ($this->entries as $entry)
 				if ($entry->getKey() === $key) {
-					$this->entries = array_splice($this->entries, $i, 1);
+					$this->entries->remove($entry);
 
 					return $entry->getValue();
 				}
@@ -93,14 +100,14 @@
 		}
 
 		public function size() {
-			return sizeof($this->entries);
+			return $this->entries->size();
 		}
 
 		public function values() {
-			$values = array();
+			$values = new ArrayList();
 
 			foreach ($this->entries as $entry)
-				$values[] = $entry->getValue();
+				$values->add($entry->getValue());
 
 			return $values;
 		}
