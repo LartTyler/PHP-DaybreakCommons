@@ -167,7 +167,7 @@
 		 * See @see done()
 		 */
 		protected static final function stopRegistration() {
-			self::done(get_called_class());
+			static::done();
 		}
 
 		/**
