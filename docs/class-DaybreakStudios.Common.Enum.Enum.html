@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class DaybreakStudios\Common\Enum\Enum</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Enum.html" title="Summary of DaybreakStudios\Common\Enum"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+					<li class="divider-vertical"></li>
+
+					<li>
+						<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+					</li>
+
+
+					<li class="divider-vertical"></li>
+
+					<li>
+						<a href="API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-DaybreakStudios.html">
+							DaybreakStudios<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-DaybreakStudios.Common.html">
+							Common<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Collection.html">
+							Collection						</a>
+							</li>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Comparison.html">
+							Comparison						</a>
+							</li>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.DateTime.html">
+							DateTime						</a>
+							</li>
+					<li class="active">
+						<a href="namespace-DaybreakStudios.Common.Enum.html">
+							Enum<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Enum.TwigCompat.html">
+							TwigCompat						</a>
+							</li>
+								</ul></li></ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-DaybreakStudios.Common.Enum.Enum.html">Enum</a></li>
+				<li><a href="class-DaybreakStudios.Common.Enum.EnumUtil.html">EnumUtil</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Class Enum</h1>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="alert alert-info">
+		<b>Abstract</b><br>
+		
+		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Enum.html">Enum</a><br>
+		
+
+				<b>License:</b>
+				<a href="GPL-2.0+">GPL-2.0+</a><br>
+				<b>Author:</b>
+				<p>Tyler Lartonoix <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x6f;&#x76;&#101;&#114;&#x6c;&#111;&#114;&#x64;&#99;&#111;&#x64;e&#109;&#x6f;n&#107;&#x65;&#x79;&#64;&#x6c;&#x69;&#118;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x6f;&#x76;&#101;&#114;&#x6c;&#111;&#114;&#x64;&#99;&#111;&#x64;e&#109;&#x6f;n&#107;&#x65;&#x79;&#64;&#x6c;&#x69;&#118;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+
+<p>Base class for Enum objects.</p><br>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Enum.Enum.html#9-253" title="Go to source code">DaybreakStudios/Common/Enum/Enum.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="register" id="_register">
+
+			<td class="attributes"><code>
+				 protected static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_register">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#24-53" title="Go to source code">register</a>( <span>string <var>$name</var></span>, <span>mixed <var>$ctors</var></span> )</code>
+
+			<div class="description short">
+				<p>Registers a new element to an enum.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Registers a new element to an enum.</p>
+
+<p>This may ONLY be called from within a subclass of Enum, as it relys on PHP's get_called_class() to determine
+which enum to register to.</p>
+
+<p>Enum::register accepts a variable number of arguments, but should always have at least a single argument which
+names the element being added. Any arguments following the first will be passed, in order, to the constructor
+of whichever enum is being registered to.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>the name of the enum being registered</dd>
+						<dt><var>$ctors</var></dt>
+						<dd>zero or more arguments to be passed to the enum's constructor</dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 protected 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#55-58" title="Go to source code">__construct</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="name" id="_name">
+
+			<td class="attributes"><code>
+				final public 
+				string
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_name">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#60-67" title="Go to source code">name</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the name of an enum element.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the name of an enum element.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>the enum element's name
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="ordinal" id="_ordinal">
+
+			<td class="attributes"><code>
+				final public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_ordinal">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#69-80" title="Go to source code">ordinal</a>( )</code>
+
+			<div class="description short">
+				<p>Gets the ordinal of an enum element.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets the ordinal of an enum element.</p>
+
+<p>Element ordinals are determined by the order they are registered in. Ordinals are guarenteed
+to be the same during a single runtime, but cannot be guarenteed to remain the same in later
+sessions.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>the ordinal of the enum element
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="values" id="_values">
+
+			<td class="attributes"><code>
+				final public static
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_values">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#108-123" title="Go to source code">values</a>( )</code>
+
+			<div class="description short">
+				<p>Gets an array of all registered elements of the enum.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Gets an array of all registered elements of the enum.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>an array containing all elements in the enum
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="valueOf" id="_valueOf">
+
+			<td class="attributes"><code>
+				 public static
+				the
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_valueOf">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#125-147" title="Go to source code">valueOf</a>( <span>string <var>$str</var></span> )</code>
+
+			<div class="description short">
+				<p>Attempts to match a string name to an enum element.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Attempts to match a string name to an enum element.</p>
+
+<p>Strings passed to this method will be converted to a format allowable in an enum name. That is to say,
+they will have any spaces or dashes converted to underscores, and all whitespace on either side of the
+string will be trimmed.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$str</var></dt>
+						<dd>the string to match to an enum element name</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						the<br>matched enum element, or null if one could not be found
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="fromOrdinal" id="_fromOrdinal">
+
+			<td class="attributes"><code>
+				 public static
+				the
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_fromOrdinal">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#149-169" title="Go to source code">fromOrdinal</a>( <span>integer <var>$ordinal</var></span> )</code>
+
+			<div class="description short">
+				<p>Matches an integer (via an enum element's ordinal property) to an enum element.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Matches an integer (via an enum element's ordinal property) to an enum element.</p>
+
+<p>If the ordinal is out of range, an InvalidArgumentException will be thrown.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$ordinal</var></dt>
+						<dd>the ordinal number to be retrieved</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						the<br>matched enum element
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="stopRegistration" id="_stopRegistration" class="deprecated">
+
+			<td class="attributes"><code>
+				final protected static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_stopRegistration">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#171-177" title="Go to source code">stopRegistration</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+					<h4>Deprecated</h4>
+					<div class="list">
+							<p>use the more succinct <code>done</code> method instead
+See @see done()</p><br>
+					</div>
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isDone" id="_isDone">
+
+			<td class="attributes"><code>
+				final public static
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isDone">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#193-207" title="Go to source code">isDone</a>( <span>string <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Checks if registration has been stopped for a particular enum.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Checks if registration has been stopped for a particular enum.</p>
+
+<p>If no name is specified, it is assumed that the method was called from within the enum itself, and
+it's named will be determined via get_called_class().</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$name</var></dt>
+						<dd>optional; if set, it is the name of the enum to look up</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if Enum::done has been called by the enum, false otherwise
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isRegistrationStopped" id="_isRegistrationStopped" class="deprecated">
+
+			<td class="attributes"><code>
+				final public static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isRegistrationStopped">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#209-215" title="Go to source code">isRegistrationStopped</a>( <span> <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+					<h4>Deprecated</h4>
+					<div class="list">
+							<p>use of isDone is preferred for naming consistency
+See @see isDone()</p><br>
+					</div>
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="init" id="_init">
+
+			<td class="attributes"><code>
+				 protected static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_init">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#217-224" title="Go to source code">init</a>( )</code>
+
+			<div class="description short">
+				<p>Initializes the values of an enum.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Initializes the values of an enum.</p>
+
+<p>This method should ALWAYS be overridden when extending Enum.</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="autoload" id="_autoload">
+
+			<td class="attributes"><code>
+				 protected static
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_autoload">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#226-229" title="Go to source code">autoload</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Constants summary</h2></div>
+			<table class="summary table table-bordered table-striped constants" id="constants">
+			<tr data-order="NS_PATH" id="NS_PATH">
+
+				<td class="attributes"><code>string</code></td>
+				<td class="name">
+					<code>
+						<a href="source-class-DaybreakStudios.Common.Enum.Enum.html#16" title="Go to source code"><b>NS_PATH</b></a>
+					</code>
+
+					<div class="description short">
+						
+					</div>
+
+					<div class="description detailed hidden">
+						
+
+					</div>
+				</td>
+				<td class="value">
+					<div>
+						<a href="#NS_PATH" class="anchor">#</a>
+						<code><span class="php-quote">'DaybreakStudios\Common\Enum\Enum'</span></code>
+					</div>
+				</td>
+			</tr>
+			</table>
+		</div>
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
