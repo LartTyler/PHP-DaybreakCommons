@@ -127,6 +127,9 @@
 	<h1>Class SimpleMap</h1>
 
 
+	<div class="description">
+	<p>An object that maps keys to values. A map cannot contain duplicate keys.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -157,7 +160,7 @@
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Collection.html">Collection</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#6-119" title="Go to source code">DaybreakStudios/Common/Collection/SimpleMap.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#6-126" title="Go to source code">DaybreakStudios/Common/Collection/SimpleMap.php</a>
 		<br>
 	</div>
 
@@ -166,7 +169,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h2>Methods summary</h2></div>
 			<table class="summary table table-bordered table-striped methods" id="methods">
-		<tr data-order="clear" id="_clear">
+		<tr data-order="__construct" id="___construct">
 
 			<td class="attributes"><code>
 				 public 
@@ -176,8 +179,8 @@
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_clear">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#9-11" title="Go to source code">clear</a>( )</code>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#9-14" title="Go to source code">__construct</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Map.html">DaybreakStudios\Common\Collection\Map</a></code> <var>$map</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				
@@ -189,6 +192,39 @@
 
 
 
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="clear" id="_clear">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_clear">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#16-18" title="Go to source code">clear</a>( )</code>
+
+			<div class="description short">
+				<p>Removes all of the mappings from this map (optional operation).</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Removes all of the mappings from this map (optional operation).</p>
+
+
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>clear</code> operation is not supported
+					</div>
 
 
 
@@ -201,24 +237,33 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_containsKey">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#13-19" title="Go to source code">containsKey</a>( <span> <var>$key</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#20-26" title="Go to source code">containsKey</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this map contains a mapping for the given key.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this map contains a mapping for the given key.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key to test for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this map contains a mapping for the given key
+					</div>
 
 
 
@@ -232,24 +277,33 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_containsValue">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#21-27" title="Go to source code">containsValue</a>( <span> <var>$value</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#28-34" title="Go to source code">containsValue</a>( <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this map contains one or more mappings to the given value.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this map contains one or more mappings to the given value.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd>the value to test for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this map contains a mapping to the given value
+					</div>
 
 
 
@@ -263,24 +317,30 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.Set.html">DaybreakStudios\Common\Collection\Set</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_entrySet">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#29-31" title="Go to source code">entrySet</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#36-38" title="Go to source code">entrySet</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns a Set view of the mappings in this map. The collection is backed by the map, so any changes to the
+Set will also be reflected in this map, and vice-versa.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns a Set view of the mappings in this map. The collection is backed by the map, so any changes to the
+Set will also be reflected in this map, and vice-versa.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.Set.html">DaybreakStudios\Common\Collection\Set</a></code><br>a set containing all the mappings in this map
+					</div>
 
 
 
@@ -294,24 +354,35 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				mixed
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_get">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#33-39" title="Go to source code">get</a>( <span> <var>$key</var></span>, <span> <var>$def</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#40-46" title="Go to source code">get</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$def</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns the value to which the given key is mapped, or null if there is no mapping for the key in this map.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the value to which the given key is mapped, or null if there is no mapping for the key in this map.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key whose value is to be returned</dd>
+						<dt><var>$def</var></dt>
+						<dd>optional; the default value to use if no mapping exists</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the value of the mapping, or $def if no mapping exists
+					</div>
 
 
 
@@ -325,24 +396,28 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_isEmpty">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#41-43" title="Go to source code">isEmpty</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#48-50" title="Go to source code">isEmpty</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this map contains no mappings.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this map contains no mappings.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if there are no mappings in this map
+					</div>
 
 
 
@@ -356,24 +431,30 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.Set.html">DaybreakStudios\Common\Collection\Set</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_keySet">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#45-52" title="Go to source code">keySet</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#52-59" title="Go to source code">keySet</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns a Set view of the keys in this map. Unlike <code>entrySet</code>, the returned set is NOT backed by this map,
+so any changes made will not be reflected in either collection.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns a Set view of the keys in this map. Unlike <code>entrySet</code>, the returned set is NOT backed by this map,
+so any changes made will not be reflected in either collection.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.Set.html">DaybreakStudios\Common\Collection\Set</a></code><br>a Set view of the keys in this map
+					</div>
 
 
 
@@ -387,25 +468,44 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				mixed
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_put">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#54-77" title="Go to source code">put</a>( <span> <var>$key</var></span>, <span> <var>$value</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#61-84" title="Go to source code">put</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Maps the given key to the given value in this map (optional operation). If the key already exists in this
+map, it's value will be replaced by the given value.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Maps the given key to the given value in this map (optional operation). If the key already exists in this
+map, it's value will be replaced by the given value.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key to map the given value to</dd>
+						<dt><var>$value</var></dt>
+						<dd>the value to map</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the previously mapped value, or null if there wasn't one
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>put</code> operaiton is not supported<br>
+						InvalidArgumentException<br><p>if a property of the key or value prevents it from being stored in this map
+        (such as type)</p>
+					</div>
 
 
 
@@ -425,18 +525,29 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_putAll">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#79-82" title="Go to source code">putAll</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Map.html">DaybreakStudios\Common\Collection\Map</a></code> <var>$map</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#86-89" title="Go to source code">putAll</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Map.html">DaybreakStudios\Common\Collection\Map</a></code> <var>$map</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Copies all of the mappings from the given map to this map (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Copies all of the mappings from the given map to this map (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$map</var></dt>
+						<dd>the map whose mappings will be copied into this map</dd>
+					</dl></div>
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>putAll</code> operation is not supported<br>
+						InvalidArgumentException<br><p>if a property of a key or value in the given map prevents it from being
+        stored in this map (such as type)</p>
+					</div>
 
 
 
@@ -449,25 +560,41 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				mixed
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_remove">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#84-93" title="Go to source code">remove</a>( <span> <var>$key</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#91-100" title="Go to source code">remove</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Removes a mapping for a key from this map, if it is present (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes a mapping for a key from this map, if it is present (optional operation).</p>
+
+<p>If the map permits null values, the default return value does not necessarily mean that there was no previous
+mapping for the given key.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key whose mapping will be removed</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the value that was previously mapped, or null if there was not one
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>remove</code> operation is not supported
+					</div>
 
 
 
@@ -480,24 +607,28 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				integer
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_size">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#95-97" title="Go to source code">size</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#102-104" title="Go to source code">size</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns the number of mappings contained in this map.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the number of mappings contained in this map.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>the number of mappings in this map
+					</div>
 
 
 
@@ -511,24 +642,30 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_values">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#99-106" title="Go to source code">values</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#106-113" title="Go to source code">values</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns a Collection view of the values in this map. The returned collection is not backed by this map, and
+any changes made to either collection will not be reflected in the other.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns a Collection view of the values in this map. The returned collection is not backed by this map, and
+any changes made to either collection will not be reflected in the other.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code><br>a collection view of the values in this map
+					</div>
 
 
 
@@ -542,25 +679,35 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				array
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_toArray">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#108-118" title="Go to source code">toArray</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleMap.html#115-125" title="Go to source code">toArray</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Converts this map into a PHP associative array (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Converts this map into a PHP associative array (optional operation).</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>an array whose keys are the keys in this map, mapped to their corresponding values
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>toArray</code> operation is not supported<br>
+						UnexpectedValueException<br><p>if any mappings in this map contain a non-scalar key, which is not an
+        allowed key in PHP arrays</p>
+					</div>
 
 
 
@@ -588,7 +735,7 @@
 		<tr data-order="entries" id="$entries">
 			<td class="attributes"><code>
 				protected  
-				array
+				
 			</code></td>
 
 			<td class="name">
@@ -606,7 +753,7 @@
 			<td class="value">
 				<div>
 					<a href="#$entries" class="anchor">#</a>
-					<code><span class="php-keyword1">array</span>()</code>
+					<code></code>
 				</div>
 			</td>
 		</tr>

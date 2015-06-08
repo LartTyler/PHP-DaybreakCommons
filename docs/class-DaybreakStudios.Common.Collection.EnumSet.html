@@ -128,10 +128,8 @@
 
 
 	<div class="description">
-	<p>Base interface for most objects in the Collections library.</p>
-
-<p>Not all methods defined in this interface are required in child classes. Any methods without an implementation
-should throw a BadMethodCallException to denote unsupported operations.</p>
+	<p>EnumSets are specialized sets for dealing with Enums. Since all values of an enum are known at runtime, certain
+optimizations can be made that allow sets of enums to perform much faster than standard sets.</p>
 	</div>
 
 	<dl class="tree well">
@@ -164,7 +162,9 @@ should throw a BadMethodCallException to denote unsupported operations.</p>
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Collection.html">Collection</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#10-142" title="Go to source code">DaybreakStudios/Common/Collection/EnumSet.php</a>
+				<b>See:</b>
+				<code><a href="class-DaybreakStudios.Common.Enum.Enum.html">DaybreakStudios\Common\Enum\Enum</a></code><br>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#10-201" title="Go to source code">DaybreakStudios/Common/Collection/EnumSet.php</a>
 		<br>
 	</div>
 
@@ -184,7 +184,7 @@ should throw a BadMethodCallException to denote unsupported operations.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#14-29" title="Go to source code">__construct</a>( <span> <var>$class</var></span>, <span>array <var>$elements</var> = <span class="php-keyword1">array</span>()</span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#20-35" title="Go to source code">__construct</a>( <span> <var>$class</var></span>, <span>array <var>$elements</var> = <span class="php-keyword1">array</span>()</span> )</code>
 
 			<div class="description short">
 				
@@ -215,14 +215,14 @@ should throw a BadMethodCallException to denote unsupported operations.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_add">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#31-39" title="Go to source code">add</a>( <span>mixed <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#37-56" title="Go to source code">add</a>( <span><code><a href="class-DaybreakStudios.Common.Enum.Enum.html">DaybreakStudios\Common\Enum\Enum</a></code> <var>$e</var></span> )</code>
 
 			<div class="description short">
-				<p>Ensures that this collection contains the given element (optional operation).</p>
+				<p>Ensures that this set contains the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Ensures that this collection contains the given element (optional operation).</p>
+				<p>Ensures that this set contains the given element.</p>
 
 
 					<h4>Parameters</h4>
@@ -233,12 +233,11 @@ should throw a BadMethodCallException to denote unsupported operations.</p>
 
 					<h4>Returns</h4>
 					<div class="list">
-						boolean<br>true if this collection changed as a result of this call, false otherwise
+						boolean<br>true if this set changed as a result of this call, false otherwise
 					</div>
 
 					<h4>Throws</h4>
 					<div class="list">
-						BadMethodCallException<br>if the <code>add</code> operation is not supported<br>
 						InvalidArgumentException<br><p>if some property of the element prevented it from being added to this
         collection (such as type).</p>
 					</div>
@@ -261,7 +260,7 @@ should throw a BadMethodCallException to denote unsupported operations.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_clear">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#41-43" title="Go to source code">clear</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#58-60" title="Go to source code">clear</a>( )</code>
 
 			<div class="description short">
 				<p>Removes all elements from this collection (optional operation). This collection will be empty following this
@@ -298,14 +297,14 @@ call.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_contains">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#45-50" title="Go to source code">contains</a>( <span>mixed <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#62-73" title="Go to source code">contains</a>( <span><code><a href="class-DaybreakStudios.Common.Enum.Enum.html">DaybreakStudios\Common\Enum\Enum</a></code> <var>$e</var></span> )</code>
 
 			<div class="description short">
-				<p>Returns true if this collection contains the given element.</p>
+				<p>Returns true if this set contains the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Returns true if this collection contains the given element.</p>
+				<p>Returns true if this set contains the given element.</p>
 
 
 					<h4>Parameters</h4>
@@ -316,7 +315,7 @@ call.</p>
 
 					<h4>Returns</h4>
 					<div class="list">
-						boolean<br>true if this collection contains the element
+						boolean<br>true if this set contains the element
 					</div>
 
 
@@ -327,33 +326,39 @@ call.</p>
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="iterator" id="_iterator">
+		<tr data-order="getIterator" id="_getIterator">
 
 			<td class="attributes"><code>
 				 public 
-				
+				Iterator
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_iterator">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#52-54" title="Go to source code">iterator</a>( )</code>
+			<a class="anchor" href="#_getIterator">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#75-77" title="Go to source code">getIterator</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns an iterator over the elements in this collection. The iterator will always return the elements in
+the order they were added to the collection, unless otherwise specified by a specific implementation.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns an iterator over the elements in this collection. The iterator will always return the elements in
+the order they were added to the collection, unless otherwise specified by a specific implementation.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						Iterator<br>an iterator that can be used to iterator over the elements in this collection
+					</div>
 
 
 
 					<h4>Overrides</h4>
-					<div class="list"><code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_iterator">DaybreakStudios\Common\Collection\SimpleSet::iterator</a></code></div>
+					<div class="list"><code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_getIterator">DaybreakStudios\Common\Collection\SimpleSet::getIterator</a></code></div>
 
 			</div>
 			</div></td>
@@ -369,25 +374,25 @@ call.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_remove">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#56-66" title="Go to source code">remove</a>( <span>mixed <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#79-95" title="Go to source code">remove</a>( <span><code><a href="class-DaybreakStudios.Common.Enum.Enum.html">DaybreakStudios\Common\Enum\Enum</a></code> <var>$e</var></span> )</code>
 
 			<div class="description short">
-				<p>Removes a single instance of an object from this collection, if it is present (optional operation).</p>
+				<p>Removes a single instance of an object from this set, if it is present.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				<p>Removes a single instance of an object from this collection, if it is present (optional operation).</p>
+				<p>Removes a single instance of an object from this set, if it is present.</p>
 
 
 					<h4>Parameters</h4>
 					<div class="list"><dl>
 						<dt><var>$e</var></dt>
-						<dd>the element to remove from this collection, if present</dd>
+						<dd>the element to remove from this set, if present</dd>
 					</dl></div>
 
 					<h4>Returns</h4>
 					<div class="list">
-						boolean<br>true if this collection changed as a result of this call
+						boolean<br>true if this set changed as a result of this call
 					</div>
 
 					<h4>Throws</h4>
@@ -413,7 +418,7 @@ call.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_size">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#68-76" title="Go to source code">size</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#97-105" title="Go to source code">size</a>( )</code>
 
 			<div class="description short">
 				<p>Returns the number of elements contained in this collection.</p>
@@ -448,7 +453,7 @@ call.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_toArray">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#78-86" title="Go to source code">toArray</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#107-115" title="Go to source code">toArray</a>( )</code>
 
 			<div class="description short">
 				<p>Returns an array containing all of the elements in this collection. If the implementation makes an guarantees
@@ -480,24 +485,33 @@ order.</p>
 
 			<td class="attributes"><code>
 				 public static
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_allOf">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#88-93" title="Go to source code">allOf</a>( <span> <var>$class</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#117-129" title="Go to source code">allOf</a>( <span>string <var>$class</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates a new EnumSet that contains all of the values in the given class.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates a new EnumSet that contains all of the values in the given class.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$class</var></dt>
+						<dd>the fully-qualified namespace of the enum to load</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code><br>an EnumSet containing all elements in the enum
+					</div>
 
 
 
@@ -509,24 +523,35 @@ order.</p>
 
 			<td class="attributes"><code>
 				 public static
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_complementOf">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#95-103" title="Go to source code">complementOf</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code> <var>$set</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#131-146" title="Go to source code">complementOf</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code> <var>$set</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates a new EnumSet that is the complement of the given EnumSet. Or in other words, creates an EnumSet
+containing all enum values that are not present in the given EnumSet.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates a new EnumSet that is the complement of the given EnumSet. Or in other words, creates an EnumSet
+containing all enum values that are not present in the given EnumSet.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$set</var></dt>
+						<dd>the EnumSet to generate a complement for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code><br>the resulting EnumSet
+					</div>
 
 
 
@@ -538,53 +563,33 @@ order.</p>
 
 			<td class="attributes"><code>
 				 public static
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_copyOf">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#105-107" title="Go to source code">copyOf</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code> <var>$set</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#148-156" title="Go to source code">copyOf</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code> <var>$set</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates a new EnumSet that contains all of the elements in the given EnumSet.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates a new EnumSet that contains all of the elements in the given EnumSet.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$set</var></dt>
+						<dd>the EnumSet to copy</dd>
+					</dl></div>
 
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="noneOf" id="_noneOf">
-
-			<td class="attributes"><code>
-				 public static
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_noneOf">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#109-114" title="Go to source code">noneOf</a>( <span> <var>$class</var></span> )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code><br>the resulting EnumSet
+					</div>
 
 
 
@@ -596,25 +601,40 @@ order.</p>
 
 			<td class="attributes"><code>
 				 public static
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_of">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#116-125" title="Go to source code">of</a>( <span> <var>$class</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#158-173" title="Go to source code">of</a>( <span>string <var>$class</var></span>, <span><code><a href="class-DaybreakStudios.Common.Enum.Enum.html">DaybreakStudios\Common\Enum\Enum</a></code> <var>$values</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates a new EnumSet that contains all of the elements passed to this method after the first.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates a new EnumSet that contains all of the elements passed to this method after the first.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$class</var></dt>
+						<dd>the fully-qualified namespace of the enum</dd>
+						<dt><var>$values</var></dt>
+						<dd>zero or more values that the resulting EnumSet should contain</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code><br>the resulting EnumSet
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given class name is not an enum
+					</div>
 
 
 
@@ -625,25 +645,43 @@ order.</p>
 
 			<td class="attributes"><code>
 				 public static
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_range">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#127-141" title="Go to source code">range</a>( <span> <var>$class</var></span>, <span> <var>$from</var></span>, <span> <var>$to</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#175-200" title="Go to source code">range</a>( <span>string <var>$class</var></span>, <span><code><a href="class-DaybreakStudios.Common.Enum.Enum.html">DaybreakStudios\Common\Enum\Enum</a></code> <var>$from</var></span>, <span><code><a href="class-DaybreakStudios.Common.Enum.Enum.html">DaybreakStudios\Common\Enum\Enum</a></code> <var>$to</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates an EnumSet that initially contains all of the elements between two endpoints.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates an EnumSet that initially contains all of the elements between two endpoints.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$class</var></dt>
+						<dd>the fully-qualified namespace of the num</dd>
+						<dt><var>$from</var></dt>
+						<dd>the start point of the range</dd>
+						<dt><var>$to</var></dt>
+						<dd>the end point of the range</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.EnumSet.html">DaybreakStudios\Common\Collection\EnumSet</a></code><br>the resulting EnumSet
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br><p>if either of the range endpoints are not enums, or they are not elements
+        from the same enum</p>
+					</div>
 
 
 
@@ -658,8 +696,8 @@ order.</p>
 			<p class="elementList">
 				<code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_addAll">addAll()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_containsAll">containsAll()</a></code>, 
-				<code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_getIterator">getIterator()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_isEmpty">isEmpty()</a></code>, 
+				<code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_iterator">iterator()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_removeAll">removeAll()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.SimpleSet.html#_retainAll">retainAll()</a></code>
 			</p>
@@ -684,7 +722,7 @@ order.</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#11" title="Go to source code"><var>$class</var></a>
+					<a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#17" title="Go to source code"><var>$class</var></a>
 
 				<div class="description short">
 					
@@ -709,7 +747,7 @@ order.</p>
 			</code></td>
 
 			<td class="name">
-					<a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#12" title="Go to source code"><var>$universe</var></a>
+					<a href="source-class-DaybreakStudios.Common.Collection.EnumSet.html#18" title="Go to source code"><var>$universe</var></a>
 
 				<div class="description short">
 					

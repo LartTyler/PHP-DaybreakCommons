@@ -127,6 +127,9 @@
 	<h1>Class EnumMap</h1>
 
 
+	<div class="description">
+	<p>An object that maps keys to values. A map cannot contain duplicate keys.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -192,6 +195,8 @@
 
 
 
+					<h4>Overrides</h4>
+					<div class="list"><code><a href="class-DaybreakStudios.Common.Collection.SimpleMap.html#___construct">DaybreakStudios\Common\Collection\SimpleMap::__construct</a></code></div>
 
 			</div>
 			</div></td>
@@ -200,24 +205,33 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_containsKey">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#19-24" title="Go to source code">containsKey</a>( <span> <var>$key</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#19-24" title="Go to source code">containsKey</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this map contains a mapping for the given key.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this map contains a mapping for the given key.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key to test for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this map contains a mapping for the given key
+					</div>
 
 
 
@@ -231,24 +245,35 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				mixed
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_get">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#26-34" title="Go to source code">get</a>( <span> <var>$key</var></span>, <span> <var>$def</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#26-34" title="Go to source code">get</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$def</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns the value to which the given key is mapped, or null if there is no mapping for the key in this map.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the value to which the given key is mapped, or null if there is no mapping for the key in this map.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key whose value is to be returned</dd>
+						<dt><var>$def</var></dt>
+						<dd>optional; the default value to use if no mapping exists</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the value of the mapping, or $def if no mapping exists
+					</div>
 
 
 
@@ -262,25 +287,44 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				mixed
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_put">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#36-62" title="Go to source code">put</a>( <span> <var>$key</var></span>, <span> <var>$value</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#36-62" title="Go to source code">put</a>( <span>mixed <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Maps the given key to the given value in this map (optional operation). If the key already exists in this
+map, it's value will be replaced by the given value.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Maps the given key to the given value in this map (optional operation). If the key already exists in this
+map, it's value will be replaced by the given value.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key to map the given value to</dd>
+						<dt><var>$value</var></dt>
+						<dd>the value to map</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the previously mapped value, or null if there wasn't one
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>put</code> operaiton is not supported<br>
+						InvalidArgumentException<br><p>if a property of the key or value prevents it from being stored in this map
+        (such as type)</p>
+					</div>
 
 
 					<h4>Overrides</h4>
@@ -303,15 +347,26 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#64-70" title="Go to source code">putAll</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Map.html">DaybreakStudios\Common\Collection\Map</a></code> <var>$map</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Copies all of the mappings from the given map to this map (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Copies all of the mappings from the given map to this map (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$map</var></dt>
+						<dd>the map whose mappings will be copied into this map</dd>
+					</dl></div>
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>putAll</code> operation is not supported<br>
+						InvalidArgumentException<br><p>if a property of a key or value in the given map prevents it from being
+        stored in this map (such as type)</p>
+					</div>
 
 
 					<h4>Overrides</h4>
@@ -324,25 +379,41 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				mixed
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_remove">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#72-84" title="Go to source code">remove</a>( <span> <var>$key</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.EnumMap.html#72-84" title="Go to source code">remove</a>( <span>mixed <var>$key</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Removes a mapping for a key from this map, if it is present (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes a mapping for a key from this map, if it is present (optional operation).</p>
+
+<p>If the map permits null values, the default return value does not necessarily mean that there was no previous
+mapping for the given key.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd>the key whose mapping will be removed</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the value that was previously mapped, or null if there was not one
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>remove</code> operation is not supported
+					</div>
 
 
 					<h4>Overrides</h4>
