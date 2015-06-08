@@ -180,7 +180,7 @@
 			if ($name === null)
 				$name = get_called_class();
 
-			if (self::isRegistrationStopped($name))
+			if (self::isDone($name))
 				return;
 
 			self::$stopped[] = $name;
@@ -199,7 +199,7 @@
 			if ($name === null)
 				$name = get_called_class();
 
-			return in_array($name, self::$stopRegistration);
+			return in_array($name, self::$stopped);
 		}
 
 		/**
