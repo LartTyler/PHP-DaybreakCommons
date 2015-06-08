@@ -4,6 +4,7 @@
 	use \BadMethodCallException;
 	use \Exception;
 	use \InvalidArgumentException;
+	use \OutOfBoundsException;
 	use \ReflectionClass;
 
 	abstract class Enum {
@@ -18,12 +19,7 @@
 		/**
 		 * Registers a new element to an enum.
 		 *
-		 * This may ONLY be called from within a subclass of Enum, as it relys on PHP's get_called_class() to determine
-		 * which enum to register to.
-		 *
-		 * Enum::register accepts a variable number of arguments, but should always have at least a single argument which
-		 * names the element being added. Any arguments following the first will be passed, in order, to the constructor
-		 * of whichever enum is being registered to.
+		 * @throws BadMethodCallException if the enum has already been loaded
 		 *
 		 * @param string $name 			the name of the enum being registered
 		 * @param mixed  $ctors,... 	zero or more arguments to be passed to the enum's constructor
@@ -32,7 +28,7 @@
 			$key = get_called_class();
 
 			if (static::isDone())
-				throw new Exception(sprintf('Registration has been halted for %s; cannot add %s to the enum list.',
+				throw new BadMethodCallException(sprintf('Registration has been halted for %s; cannot add %s to the enum list.',
 					$key, $name));
 
 			if (!array_key_exists($key, self::$types))
@@ -77,6 +73,8 @@
 		 * Internal use only. Sets the name property of an enum element.
 		 *
 		 * @internal
+		 * @throws BadMethodCallException if the name of the enum element is already set
+		 *
 		 * @param string $name  the name of the enum element
 		 */
 		private final function setName($name) {
@@ -90,6 +88,8 @@
 		 * Internal use only. Sets the ordinal property of an enum element.
 		 *
 		 * @internal
+		 * @throws BadMethodCallException if the ordinal of the enum element is already set
+		 *
 		 * @param integer $ordinal  the ordinal of the enum element
 		 */
 		private final function setOrdinal($ordinal) {
@@ -143,7 +143,8 @@
 		/**
 		 * Matches an integer (via an enum element's ordinal property) to an enum element.
 		 *
-		 * If the ordinal is out of range, an InvalidArgumentException will be thrown.
+		 *
+		 * @throws OutOfBoundsException if $ordinal is could not be matched to an enum element
 		 *
 		 * @param  integer $ordinal the ordinal number to be retrieved
 		 * @return the matched enum element
@@ -159,7 +160,7 @@
 			if ($ordinal >= 0 && $ordinal < sizeof($values))
 				return $values[$ordinal];
 
-			throw new InvalidArgumentException(sprintf('%s is not a valid ordinal for %s.', $ordinal, $key));
+			throw new OutOfBoundsException(sprintf('%s is not a valid ordinal for %s.', $ordinal, $key));
 		}
 
 		/**
@@ -226,6 +227,8 @@
 		 * Internal use only. Used to retrieve enum elements.
 		 *
 		 * @internal
+		 * @throws InvalidArgumentException if an enum element is retrieved from the base class
+		 * @throws InvalidArgumentException if no enum element could be found
 		 */
 		public static final function __callStatic($method, $args) {
 			if (method_exists(self::NS_PATH, $method))
@@ -234,7 +237,7 @@
 			$key = get_called_class();
 
 			if ($key === self::NS_PATH)
-				throw new Exception(sprintf('Cannot access %s of Enum parent class.', $method));
+				throw new InvalidArgumentException(sprintf('Cannot access %s of Enum parent class.', $method));
 
 			if (!static::isDone())
 				static::autoload();
@@ -242,7 +245,7 @@
 			if (isset(self::$types[$key][$method]))
 				return self::$types[$key][$method];
 
-			throw new Exception(sprintf('No property %s found in %s.', $method, $key));
+			throw new InvalidArgumentException(sprintf('No property %s found in %s.', $method, $key));
 		}
 	}
 ?>
