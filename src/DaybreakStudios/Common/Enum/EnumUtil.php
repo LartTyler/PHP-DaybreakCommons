@@ -23,8 +23,10 @@
 		 * @return boolean           true if $class is an enum class, false otherwise
 		 */
 		public static function isEnumClass($class, $autoload = true) {
-			if ($autoload && !$class::isRegistrationHalted())
+			if ($autoload && !$class::isRegistrationHalted()) {
 				$class::init();
+				$class::done();
+			}
 
 			return is_string($class) && class_exists($class) && is_subclass_of($class, self::ENUM_NAMESPACE);
 		}

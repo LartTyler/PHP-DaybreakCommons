@@ -7,6 +7,8 @@
 	use \ReflectionClass;
 
 	abstract class Enum {
+		const NS_PATH = 'DaybreakStudios\Common\Enum\Enum';
+
 		private static $stopped = array();
 		private static $types = array();
 
@@ -220,16 +222,18 @@
 		 * @internal
 		 */
 		public static final function __callStatic($method, $args) {
-			if (method_exists('DaybreakStudios\Common\Enum\Enum', $method))
+			if (method_exists(self::NS_PATH, $method))
 				return self::$method();
 
 			$key = get_called_class();
 
-			if ($key === 'DaybreakStudios\Common\Enum\Enum')
+			if ($key === self::NS_PATH)
 				throw new Exception(sprintf('Cannot access %s of Enum parent class.', $method));
 
-			if (!isset(self::$types[$key]))
+			if (!isset(self::$types[$key])) {
 				$key::init();
+				$key::done();
+			}
 
 			if (isset(self::$types[$key][$method]))
 				return self::$types[$key][$method];
