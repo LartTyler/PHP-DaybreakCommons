@@ -4,10 +4,13 @@
 	use \BadMethodCallException;
 	use \Exception;
 	use \InvalidArgumentException;
+	use \OutOfBoundsException;
 	use \ReflectionClass;
 
 	abstract class Enum {
-		private static $haltRegistration = array();
+		const NS_PATH = 'DaybreakStudios\Common\Enum\Enum';
+
+		private static $stopped = array();
 		private static $types = array();
 
 		private $name;
@@ -16,12 +19,7 @@
 		/**
 		 * Registers a new element to an enum.
 		 *
-		 * This may ONLY be called from within a subclass of Enum, as it relys on PHP's get_called_class() to determine
-		 * which enum to register to.
-		 *
-		 * Enum::register accepts a variable number of arguments, but should always have at least a single argument which
-		 * names the element being added. Any arguments following the first will be passed, in order, to the constructor
-		 * of whichever enum is being registered to.
+		 * @throws BadMethodCallException if the enum has already been loaded
 		 *
 		 * @param string $name 			the name of the enum being registered
 		 * @param mixed  $ctors,... 	zero or more arguments to be passed to the enum's constructor
@@ -29,8 +27,8 @@
 		protected static function register($name, ... $ctors) {
 			$key = get_called_class();
 
-			if (self::isRegistrationHalted($key))
-				throw new Exception(sprintf('Registration has been halted for %s; cannot add %s to the enum list.',
+			if (static::isDone())
+				throw new BadMethodCallException(sprintf('Registration has been halted for %s; cannot add %s to the enum list.',
 					$key, $name));
 
 			if (!array_key_exists($key, self::$types))
@@ -45,7 +43,7 @@
 		}
 
 		/**
-		 * @internal
+		 * @internal stub constructor in case child enums don't implement a constructor
 		 */
 		protected function __construct() {}
 
@@ -75,6 +73,8 @@
 		 * Internal use only. Sets the name property of an enum element.
 		 *
 		 * @internal
+		 * @throws BadMethodCallException if the name of the enum element is already set
+		 *
 		 * @param string $name  the name of the enum element
 		 */
 		private final function setName($name) {
@@ -88,6 +88,8 @@
 		 * Internal use only. Sets the ordinal property of an enum element.
 		 *
 		 * @internal
+		 * @throws BadMethodCallException if the ordinal of the enum element is already set
+		 *
 		 * @param integer $ordinal  the ordinal of the enum element
 		 */
 		private final function setOrdinal($ordinal) {
@@ -103,6 +105,9 @@
 		 * @return array  an array containing all elements in the enum
 		 */
 		public static final function values() {
+			if (!static::isDone())
+				static::autoload();
+
 			$key = get_called_class();
 
 			if (array_key_exists($key, self::$types))
@@ -124,8 +129,8 @@
 		public static function valueOf($str) {
 			$key = get_called_class();
 
-			if (!array_key_exists($key, self::$types))
-				return null;
+			if (!static::isDone())
+				static::autoload();
 
 			$str = str_replace(array(' ', '-'), '_', trim($str));
 
@@ -138,7 +143,8 @@
 		/**
 		 * Matches an integer (via an enum element's ordinal property) to an enum element.
 		 *
-		 * If the ordinal is out of range, an InvalidArgumentException will be thrown.
+		 *
+		 * @throws OutOfBoundsException if $ordinal is could not be matched to an enum element
 		 *
 		 * @param  integer $ordinal the ordinal number to be retrieved
 		 * @return the matched enum element
@@ -154,19 +160,29 @@
 			if ($ordinal >= 0 && $ordinal < sizeof($values))
 				return $values[$ordinal];
 
-			throw new InvalidArgumentException(sprintf('%s is not a valid ordinal for %s.', $ordinal, $key));
+			throw new OutOfBoundsException(sprintf('%s is not a valid ordinal for %s.', $ordinal, $key));
 		}
 
 		/**
-		 * Prevents any new enum elements from being registered under a particular enum.
+		 * @deprecated use the more succinct `done` method instead
+		 * See @see done()
 		 */
 		protected static final function stopRegistration() {
-			$key = get_called_class();
+			static::done();
+		}
 
-			if (self::isRegistrationHalted($key))
+		/**
+		 * Internal use only. Prevents any new enum elements from being registered under the current enum.
+		 *
+		 * @internal
+		 */
+		protected static final function done() {
+			$name = get_called_class();
+
+			if (self::isDone($name))
 				return;
 
-			self::$haltRegistration[] = $key;
+			self::$stopped[] = $name;
 		}
 
 		/**
@@ -176,21 +192,21 @@
 		 * it's named will be determined via get_called_class().
 		 *
 		 * @param  string  $name optional; if set, it is the name of the enum to look up
-		 * @return boolean       true if Enum::stopRegistration has been called by the enum, false otherwise
+		 * @return boolean       true if Enum::done has been called by the enum, false otherwise
 		 */
-		public static final function isRegistrationStopped($name = null) {
+		public static final function isDone($name = null) {
 			if ($name === null)
 				$name = get_called_class();
 
-			return in_array($name, self::$stopRegistration);
+			return in_array($name, self::$stopped);
 		}
 
 		/**
-		 * @deprecated use of isRegistrationStopped is preferred for naming consistancy
-		 * @see isRegistrationStopped
+		 * @deprecated use of isDone is preferred for naming consistency
+		 * See @see isDone()
 		 */
-		public static final function isRegistrationHalted($name = null) {
-			return self::isRegistrationStopped($name);
+		public static final function isRegistrationStopped($name = null) {
+			return self::isDone($name);
 		}
 
 		/**
@@ -199,30 +215,37 @@
 		 * This method should ALWAYS be overridden when extending Enum.
 		 */
 		protected static function init() {
-			static::stopRegistration();
+			// stub
+		}
+
+		protected static function autoload() {
+			static::init();
+			static::done();
 		}
 
 		/**
 		 * Internal use only. Used to retrieve enum elements.
 		 *
 		 * @internal
+		 * @throws InvalidArgumentException if an enum element is retrieved from the base class
+		 * @throws InvalidArgumentException if no enum element could be found
 		 */
 		public static final function __callStatic($method, $args) {
-			if (method_exists('DaybreakStudios\Common\Enum\Enum', $method))
+			if (method_exists(self::NS_PATH, $method))
 				return self::$method();
 
 			$key = get_called_class();
 
-			if ($key === 'DaybreakStudios\Common\Enum\Enum')
-				throw new Exception(sprintf('Cannot access %s of Enum parent class.', $method));
+			if ($key === self::NS_PATH)
+				throw new InvalidArgumentException(sprintf('Cannot access %s of Enum parent class.', $method));
 
-			if (!isset(self::$types[$key]))
-				$key::init();
+			if (!static::isDone())
+				static::autoload();
 
 			if (isset(self::$types[$key][$method]))
 				return self::$types[$key][$method];
 
-			throw new Exception(sprintf('No property %s found in %s.', $method, $key));
+			throw new InvalidArgumentException(sprintf('No property %s found in %s.', $method, $key));
 		}
 	}
 ?>
