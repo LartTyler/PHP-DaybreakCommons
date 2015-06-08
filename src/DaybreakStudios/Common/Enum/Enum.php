@@ -105,6 +105,9 @@
 		 * @return array  an array containing all elements in the enum
 		 */
 		public static final function values() {
+			if (!static::isDone())
+				static::autoload();
+
 			$key = get_called_class();
 
 			if (array_key_exists($key, self::$types))
@@ -126,8 +129,8 @@
 		public static function valueOf($str) {
 			$key = get_called_class();
 
-			if (!array_key_exists($key, self::$types))
-				return null;
+			if (!static::isDone())
+				static::autoload();
 
 			$str = str_replace(array(' ', '-'), '_', trim($str));
 
@@ -213,7 +216,12 @@
 		 * This method should ALWAYS be overridden when extending Enum.
 		 */
 		protected static function init() {
-			static::stopRegistration();
+			// stub
+		}
+
+		protected static function autoload() {
+			static::init();
+			static::done();
 		}
 
 		/**
@@ -230,10 +238,8 @@
 			if ($key === self::NS_PATH)
 				throw new Exception(sprintf('Cannot access %s of Enum parent class.', $method));
 
-			if (!isset(self::$types[$key])) {
-				$key::init();
-				$key::done();
-			}
+			if (!static::isDone())
+				static::autoload();
 
 			if (isset(self::$types[$key][$method]))
 				return self::$types[$key][$method];
