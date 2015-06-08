@@ -31,7 +31,7 @@
 		protected static function register($name, ... $ctors) {
 			$key = get_called_class();
 
-			if (self::isRegistrationHalted($key))
+			if (static::isDone())
 				throw new Exception(sprintf('Registration has been halted for %s; cannot add %s to the enum list.',
 					$key, $name));
 
