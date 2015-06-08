@@ -172,13 +172,9 @@
 
 		/**
 		 * Prevents any new enum elements from being registered under a particular enum.
-		 *
-		 * @param string $name optional; if set, it is the name of the enum to stop registration for (used for
-		 *                     forwarding calls from @see stopRegistration())
 		 */
-		protected static final function done($name = null) {
-			if ($name === null)
-				$name = get_called_class();
+		protected static final function done() {
+			$name = get_called_class();
 
 			if (self::isDone($name))
 				return;
