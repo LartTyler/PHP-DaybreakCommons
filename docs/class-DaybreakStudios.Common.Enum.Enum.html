@@ -130,13 +130,7 @@
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Enum.html">Enum</a><br>
 		
 
-				<b>License:</b>
-				<a href="GPL-2.0+">GPL-2.0+</a><br>
-				<b>Author:</b>
-				<p>Tyler Lartonoix <a href="&#109;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x6f;&#x76;&#101;&#114;&#x6c;&#111;&#114;&#x64;&#99;&#111;&#x64;e&#109;&#x6f;n&#107;&#x65;&#x79;&#64;&#x6c;&#x69;&#118;&#x65;&#x2e;&#99;&#x6f;&#x6d;">&#x6f;&#x76;&#101;&#114;&#x6c;&#111;&#114;&#x64;&#99;&#111;&#x64;e&#109;&#x6f;n&#107;&#x65;&#x79;&#64;&#x6c;&#x69;&#118;&#x65;&#x2e;&#99;&#x6f;&#x6d;</a></p>
-
-<p>Base class for Enum objects.</p><br>
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Enum.Enum.html#9-253" title="Go to source code">DaybreakStudios/Common/Enum/Enum.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Enum.Enum.html#10-250" title="Go to source code">DaybreakStudios/Common/Enum/Enum.php</a>
 		<br>
 	</div>
 
@@ -156,7 +150,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_register">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#24-53" title="Go to source code">register</a>( <span>string <var>$name</var></span>, <span>mixed <var>$ctors</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#19-43" title="Go to source code">register</a>( <span>string <var>$name</var></span>, <span>mixed <var>$ctors</var></span> )</code>
 
 			<div class="description short">
 				<p>Registers a new element to an enum.</p>
@@ -164,13 +158,6 @@
 
 			<div class="description detailed hidden">
 				<p>Registers a new element to an enum.</p>
-
-<p>This may ONLY be called from within a subclass of Enum, as it relys on PHP's get_called_class() to determine
-which enum to register to.</p>
-
-<p>Enum::register accepts a variable number of arguments, but should always have at least a single argument which
-names the element being added. Any arguments following the first will be passed, in order, to the constructor
-of whichever enum is being registered to.</p>
 
 
 					<h4>Parameters</h4>
@@ -182,6 +169,10 @@ of whichever enum is being registered to.</p>
 					</dl></div>
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the enum has already been loaded
+					</div>
 
 
 
@@ -199,7 +190,7 @@ of whichever enum is being registered to.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#55-58" title="Go to source code">__construct</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#45-48" title="Go to source code">__construct</a>( )</code>
 
 			<div class="description short">
 				
@@ -228,7 +219,7 @@ of whichever enum is being registered to.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_name">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#60-67" title="Go to source code">name</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#50-57" title="Go to source code">name</a>( )</code>
 
 			<div class="description short">
 				<p>Gets the name of an enum element.</p>
@@ -261,7 +252,7 @@ of whichever enum is being registered to.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_ordinal">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#69-80" title="Go to source code">ordinal</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#59-70" title="Go to source code">ordinal</a>( )</code>
 
 			<div class="description short">
 				<p>Gets the ordinal of an enum element.</p>
@@ -298,7 +289,7 @@ sessions.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_values">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#108-123" title="Go to source code">values</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#102-117" title="Go to source code">values</a>( )</code>
 
 			<div class="description short">
 				<p>Gets an array of all registered elements of the enum.</p>
@@ -331,7 +322,7 @@ sessions.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_valueOf">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#125-147" title="Go to source code">valueOf</a>( <span>string <var>$str</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#119-141" title="Go to source code">valueOf</a>( <span>string <var>$str</var></span> )</code>
 
 			<div class="description short">
 				<p>Attempts to match a string name to an enum element.</p>
@@ -373,7 +364,7 @@ string will be trimmed.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_fromOrdinal">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#149-169" title="Go to source code">fromOrdinal</a>( <span>integer <var>$ordinal</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#143-164" title="Go to source code">fromOrdinal</a>( <span>integer <var>$ordinal</var></span> )</code>
 
 			<div class="description short">
 				<p>Matches an integer (via an enum element's ordinal property) to an enum element.</p>
@@ -381,8 +372,6 @@ string will be trimmed.</p>
 
 			<div class="description detailed hidden">
 				<p>Matches an integer (via an enum element's ordinal property) to an enum element.</p>
-
-<p>If the ordinal is out of range, an InvalidArgumentException will be thrown.</p>
 
 
 					<h4>Parameters</h4>
@@ -396,6 +385,10 @@ string will be trimmed.</p>
 						the<br>matched enum element
 					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						OutOfBoundsException<br>if $ordinal is could not be matched to an enum element
+					</div>
 
 
 
@@ -413,7 +406,7 @@ string will be trimmed.</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_stopRegistration">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#171-177" title="Go to source code">stopRegistration</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#166-172" title="Go to source code">stopRegistration</a>( )</code>
 
 			<div class="description short">
 				
@@ -447,7 +440,7 @@ See @see done()</p><br>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_isDone">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#193-207" title="Go to source code">isDone</a>( <span>string <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#188-202" title="Go to source code">isDone</a>( <span>string <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				<p>Checks if registration has been stopped for a particular enum.</p>
@@ -488,7 +481,7 @@ it's named will be determined via get_called_class().</p>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_isRegistrationStopped">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#209-215" title="Go to source code">isRegistrationStopped</a>( <span> <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#204-210" title="Go to source code">isRegistrationStopped</a>( <span> <var>$name</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
 				
@@ -522,7 +515,7 @@ See @see isDone()</p><br>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_init">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#217-224" title="Go to source code">init</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#212-219" title="Go to source code">init</a>( )</code>
 
 			<div class="description short">
 				<p>Initializes the values of an enum.</p>
@@ -553,7 +546,7 @@ See @see isDone()</p><br>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_autoload">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#226-229" title="Go to source code">autoload</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.Enum.html#221-224" title="Go to source code">autoload</a>( )</code>
 
 			<div class="description short">
 				
@@ -589,7 +582,7 @@ See @see isDone()</p><br>
 				<td class="attributes"><code>string</code></td>
 				<td class="name">
 					<code>
-						<a href="source-class-DaybreakStudios.Common.Enum.Enum.html#16" title="Go to source code"><b>NS_PATH</b></a>
+						<a href="source-class-DaybreakStudios.Common.Enum.Enum.html#11" title="Go to source code"><b>NS_PATH</b></a>
 					</code>
 
 					<div class="description short">
