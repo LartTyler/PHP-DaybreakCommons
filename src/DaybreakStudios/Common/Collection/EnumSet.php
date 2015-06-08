@@ -145,33 +145,49 @@
 			return new EnumSet($set->class, $values);
 		}
 
+		/**
+		 * Creates a new EnumSet that contains all of the elements in the given EnumSet.
+		 *
+		 * @param  EnumSet $set the EnumSet to copy
+		 * @return EnumSet      the resulting EnumSet
+		 */
 		public static function copyOf(EnumSet $set) {
 			return new EnumSet($set->class, $set->toArray());
 		}
 
-		public static function noneOf($class) {
+		/**
+		 * Creates a new EnumSet that contains all of the elements passed to this method after the first.
+		 *
+		 * @throws InvalidArgumentException if the given class name is not an enum
+		 *
+		 * @param  string $class    the fully-qualified namespace of the enum
+		 * @param  Enum $values,... zero or more values that the resulting EnumSet should contain
+		 * @return EnumSet 			the resulting EnumSet
+		 */
+		public static function of($class, ... $values) {
 			if (!EnumUtil::isEnumClass($class))
-				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
+				throw new InvalidArgumentException($class .
+					' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
 
-			return new EnumSet($class);
+			return new EnumSet($class, $values);
 		}
 
-		public static function of($class/*, ... $values */) {
+		/**
+		 * Creates an EnumSet that initially contains all of the elements between two endpoints.
+		 *
+		 * @throws InvalidArgumentException if either of the range endpoints are not enums, or they are not elements
+		 *         from the same enum
+		 *
+		 * @param  string $class the fully-qualified namespace of the num
+		 * @param  Enum   $from  the start point of the range
+		 * @param  Enum   $to    the end point of the range
+		 * @return EnumSet       the resulting EnumSet
+		 */
+		public static function range($class, Enum $from, Enum $to) {
 			if (!EnumUtil::isEnumClass($class))
-				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
-
-			$args = func_get_args();
-
-			array_shift($args);
-
-			return new EnumSet($class, $args);
-		}
-
-		public static function range($class, $from, $to) {
-			if (!EnumUtil::isEnumClass($class))
-				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
-
-			if (!EnumUtil::isEnum($from) || !EnumUtil::isEnum($to))
+				throw new InvalidArgumentException($class .
+					' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
+			else if (!EnumUtil::isEnum($from, $class) || !EnumUtil::isEnum($to, $class))
 				throw new InvalidArgumentException(sprintf('$from and $to must be an instance of %s.', $this->class));
 
 			$values = array();
