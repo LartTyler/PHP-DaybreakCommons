@@ -18,5 +18,8 @@
 		"psr-4": {
 			"DaybreakStudios\\": "src/DaybreakStudios"
 		}
+	},
+	"suggest": {
+		"symfony/yaml": "Required if you plan on using the Localization and / or Yaml suites"
 	}
 }
