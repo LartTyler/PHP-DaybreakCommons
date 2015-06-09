@@ -1,6 +1,13 @@
 <?php
 	namespace DaybreakStudios\Common\Enum;
 
+	/**
+	 * Utility class used by the commons library for working with enums.
+	 *
+	 * @see DaybreakStudios\Common\Collection\EnumMap
+	 * @see DaybreakStudios\Common\Enum\Enum
+	 * @see DaybreakStudios\Common\Enum\TwigCompat\EnumExtension
+	 */
 	class EnumUtil {
 		const ENUM_NAMESPACE = 'DaybreakStudios\Common\Enum\Enum';
 

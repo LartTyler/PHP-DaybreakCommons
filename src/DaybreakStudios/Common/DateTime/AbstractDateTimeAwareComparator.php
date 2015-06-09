@@ -25,7 +25,13 @@
 			return is_object($value) && $value instanceof DateTime;
 		}
 
-		protected function copyAndNormalize(/*DateTime... args */) {
+		/**
+		 * Copies any number of DateTime objects and normalizes their timezones.
+		 *
+		 * @param DateTime $args,... a varargs list of DateTime objects
+		 * @return  				 array an array containing the cloned and normalized DateTime objects
+		 */
+		protected function copyAndNormalize(... $args) {
 			if ($this->utcTimezone === null)
 				$this->utcTimezone = new DateTimeZone('UTC');
 

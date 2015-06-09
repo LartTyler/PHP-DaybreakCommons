@@ -119,6 +119,9 @@
 	<h1>Interface Comparator</h1>
 
 
+	<div class="description">
+	<p>A general contract for comparisons.</p>
+	</div>
 
 
 
@@ -148,7 +151,7 @@
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Comparison.html">Comparison</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#4-8" title="Go to source code">DaybreakStudios/Common/Comparison/Comparator.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#4-36" title="Go to source code">DaybreakStudios/Common/Comparison/Comparator.php</a>
 		<br>
 	</div>
 
@@ -161,25 +164,40 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				integer
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_compare">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#5" title="Go to source code">compare</a>( <span> <var>$a</var></span>, <span> <var>$b</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#8-17" title="Go to source code">compare</a>( <span>mixed <var>$a</var></span>, <span>mixed <var>$b</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Compares <code>$a</code> to <code>$b</code> and determines which is greater.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Compares <code>$a</code> to <code>$b</code> and determines which is greater.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$a</var></dt>
+						<dd>the element being compared</dd>
+						<dt><var>$b</var></dt>
+						<dd>the element to compare against</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>-1 if a &lt; b, 0 if a == b, 1 if a > b
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if either value is not accepted by this comparator
+					</div>
 
 
 
@@ -190,25 +208,38 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				<code><a href="class-DaybreakStudios.Common.Comparison.ComparatorComposition.html">DaybreakStudios\Common\Comparison\ComparatorComposition</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_is">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#6" title="Go to source code">is</a>( <span> <var>$a</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#19-27" title="Go to source code">is</a>( <span>mixed <var>$a</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates a Composition object using <code>$a</code>.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates a Composition object using <code>$a</code>.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$a</var></dt>
+						<dd>the element to compose</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Comparison.ComparatorComposition.html">DaybreakStudios\Common\Comparison\ComparatorComposition</a></code><br>the resulting ComparatorComposition object
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given value is not accepted by this comparator
+					</div>
 
 
 
@@ -219,24 +250,33 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_accepts">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#7" title="Go to source code">accepts</a>( <span> <var>$value</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.Comparator.html#29-35" title="Go to source code">accepts</a>( <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this comparator accepts the given value.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this comparator accepts the given value.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd>the value to test</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the value can be compared by this comparator
+					</div>
 
 
 

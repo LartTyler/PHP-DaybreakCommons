@@ -2,6 +2,7 @@
 	namespace DaybreakStudios\Common\DateTime;
 
 	use \DateTimeZone;
+	use \InvalidArgumentException;
 
 	class DateComparator extends AbstractDateTimeAwareComparator {
 		public function __construct() {

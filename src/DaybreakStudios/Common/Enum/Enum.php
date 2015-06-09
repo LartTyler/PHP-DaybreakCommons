@@ -7,6 +7,9 @@
 	use \OutOfBoundsException;
 	use \ReflectionClass;
 
+	/**
+	 * Base class for all enums.
+	 */
 	abstract class Enum {
 		const NS_PATH = 'DaybreakStudios\Common\Enum\Enum';
 

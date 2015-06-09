@@ -117,6 +117,9 @@
 	<h1>Class AbstractDateTimeAwareComparator</h1>
 
 
+	<div class="description">
+	<p>A general contract for comparisons.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -149,7 +152,7 @@
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.DateTime.html">DateTime</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#10-46" title="Go to source code">DaybreakStudios/Common/DateTime/AbstractDateTimeAwareComparator.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#10-52" title="Go to source code">DaybreakStudios/Common/DateTime/AbstractDateTimeAwareComparator.php</a>
 		<br>
 	</div>
 
@@ -191,25 +194,38 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				ComparatorComposition
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_is">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#17-22" title="Go to source code">is</a>( <span> <var>$a</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#17-22" title="Go to source code">is</a>( <span>mixed <var>$a</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates a Composition object using <code>$a</code>.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates a Composition object using <code>$a</code>.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$a</var></dt>
+						<dd>the element to compose</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						ComparatorComposition<br>the resulting ComparatorComposition object
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given value is not accepted by this comparator
+					</div>
 
 
 
@@ -222,24 +238,33 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_accepts">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#24-26" title="Go to source code">accepts</a>( <span> <var>$value</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#24-26" title="Go to source code">accepts</a>( <span>mixed <var>$value</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this comparator accepts the given value.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this comparator accepts the given value.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd>the value to test</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the value can be compared by this comparator
+					</div>
 
 
 
@@ -253,24 +278,33 @@
 
 			<td class="attributes"><code>
 				 protected 
-				
+				array
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_copyAndNormalize">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#28-45" title="Go to source code">copyAndNormalize</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#28-51" title="Go to source code">copyAndNormalize</a>( <span>DateTime <var>$args</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Copies any number of DateTime objects and normalizes their timezones.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Copies any number of DateTime objects and normalizes their timezones.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$args</var></dt>
+						<dd>a varargs list of DateTime objects</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>an array containing the cloned and normalized DateTime objects
+					</div>
 
 
 

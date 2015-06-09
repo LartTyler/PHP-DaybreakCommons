@@ -115,6 +115,9 @@
 	<h1>Class EnumExtension</h1>
 
 
+	<div class="description">
+	<p>A Twig extension class that can be used to introduce enums into the Twig environment.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -143,7 +146,7 @@ Twig_Extension
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Enum.html">Enum</a>\<a href="namespace-DaybreakStudios.Common.Enum.TwigCompat.html">TwigCompat</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#9-32" title="Go to source code">DaybreakStudios/Common/Enum/TwigCompat/EnumExtension.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#9-43" title="Go to source code">DaybreakStudios/Common/Enum/TwigCompat/EnumExtension.php</a>
 		<br>
 	</div>
 
@@ -163,18 +166,29 @@ Twig_Extension
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#12-23" title="Go to source code">__construct</a>( <span> <var>$prefix</var></span>, <span> <var>$paths</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#15-34" title="Go to source code">__construct</a>( <span>string <var>$prefix</var></span>, <span>string <var>$paths</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Creates a new EnumExtension.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Creates a new EnumExtension.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$prefix</var></dt>
+						<dd>the prefix for all enums loaded this way; by default, enums are named after their class</dd>
+						<dt><var>$paths</var></dt>
+						<dd>one or more fully-qualified namespaces of enums to load</dd>
+					</dl></div>
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if one or more enum class names collide with each other
+					</div>
 
 
 
@@ -192,7 +206,7 @@ Twig_Extension
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getGlobals">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#25-27" title="Go to source code">getGlobals</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#36-38" title="Go to source code">getGlobals</a>( )</code>
 
 			<div class="description short">
 				
@@ -221,7 +235,7 @@ Twig_Extension
 
 			<td class="name"><div>
 			<a class="anchor" href="#_getName">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#29-31" title="Go to source code">getName</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html#40-42" title="Go to source code">getName</a>( )</code>
 
 			<div class="description short">
 				
