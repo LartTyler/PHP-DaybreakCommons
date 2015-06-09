@@ -33,6 +33,11 @@
 			return false;
 		}
 
+		/**
+		 * {@inheritdoc}
+		 *
+		 * @see SimpleEntry
+		 */
 		public function entrySet() {
 			return $this->entries;
 		}
