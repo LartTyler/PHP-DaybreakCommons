@@ -1,6 +1,8 @@
 <?php
 	namespace DaybreakStudios\Common\DateTime;
 
+	use \InvalidArgumentException;
+
 	class DateTimeComparator extends AbstractDateTimeAwareComparator {
 		public function __construct() {
 			parent::__construct();

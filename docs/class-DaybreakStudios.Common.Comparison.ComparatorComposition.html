@@ -119,6 +119,9 @@
 	<h1>Interface ComparatorComposition</h1>
 
 
+	<div class="description">
+	<p>A general contract for compositions used by Comparators.</p>
+	</div>
 
 
 
@@ -140,7 +143,9 @@
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Comparison.html">Comparison</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#4-15" title="Go to source code">DaybreakStudios/Common/Comparison/ComparatorComposition.php</a>
+				<b>See:</b>
+				<code><a href="class-DaybreakStudios.Common.Comparison.Comparator.html">DaybreakStudios\Common\Comparison\Comparator</a></code><br>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#4-80" title="Go to source code">DaybreakStudios/Common/Comparison/ComparatorComposition.php</a>
 		<br>
 	</div>
 
@@ -149,6 +154,48 @@
 		<div class="panel panel-default">
 			<div class="panel-heading"><h2>Methods summary</h2></div>
 			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="lessThan" id="_lessThan">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_lessThan">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#10-18" title="Go to source code">lessThan</a>( <span>mixed <var>$b</var></span> )</code>
+
+			<div class="description short">
+				<p>Returns true if the composed element is less than the given element.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns true if the composed element is less than the given element.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$b</var></dt>
+						<dd>the element to compare to</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the composed element is less than the given element
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given element is not accepted by this composition
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
 		<tr data-order="lt" id="_lt">
 
 			<td class="attributes"><code>
@@ -160,7 +207,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_lt">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#5" title="Go to source code">lt</a>( <span> <var>$b</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#20-23" title="Go to source code">lt</a>( <span> <var>$b</var></span> )</code>
 
 			<div class="description short">
 				
@@ -173,34 +220,51 @@
 
 
 
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#_lessThan">DaybreakStudios\Common\Comparison\ComparatorComposition::lessThan()</a></code><br>
+					</div>
 
 
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="lessThan" id="_lessThan">
+		<tr data-order="lessThanOrEqualTo" id="_lessThanOrEqualTo">
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_lessThan">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#6" title="Go to source code">lessThan</a>( <span> <var>$b</var></span> )</code>
+			<a class="anchor" href="#_lessThanOrEqualTo">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#25-33" title="Go to source code">lessThanOrEqualTo</a>( <span>mixed <var>$b</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if the composed element is less than or equal to the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if the composed element is less than or equal to the given element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$b</var></dt>
+						<dd>the element to compare to</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the composed element is less than or equal to the given element
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given element is not accepted by this composition
+					</div>
 
 
 
@@ -218,7 +282,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_lte">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#7" title="Go to source code">lte</a>( <span> <var>$b</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#35-38" title="Go to source code">lte</a>( <span> <var>$b</var></span> )</code>
 
 			<div class="description short">
 				
@@ -231,34 +295,51 @@
 
 
 
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#_lessThanOrEqualTo">DaybreakStudios\Common\Comparison\ComparatorComposition::lessThanOrEqualTo()</a></code><br>
+					</div>
 
 
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="lessThanOrEqualTo" id="_lessThanOrEqualTo">
+		<tr data-order="equalTo" id="_equalTo">
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_lessThanOrEqualTo">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#8" title="Go to source code">lessThanOrEqualTo</a>( <span> <var>$b</var></span> )</code>
+			<a class="anchor" href="#_equalTo">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#40-48" title="Go to source code">equalTo</a>( <span>mixed <var>$b</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if the composed element is equal to the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if the composed element is equal to the given element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$b</var></dt>
+						<dd>the element to compare to</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the composed element is equal to the given element
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given element is not accepted by this composition
+					</div>
 
 
 
@@ -276,7 +357,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_eq">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#9" title="Go to source code">eq</a>( <span> <var>$b</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#50-53" title="Go to source code">eq</a>( <span> <var>$b</var></span> )</code>
 
 			<div class="description short">
 				
@@ -289,34 +370,51 @@
 
 
 
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#_equalTo">DaybreakStudios\Common\Comparison\ComparatorComposition::equalTo()</a></code><br>
+					</div>
 
 
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="equalTo" id="_equalTo">
+		<tr data-order="greaterThan" id="_greaterThan">
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_equalTo">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#10" title="Go to source code">equalTo</a>( <span> <var>$b</var></span> )</code>
+			<a class="anchor" href="#_greaterThan">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#55-63" title="Go to source code">greaterThan</a>( <span>mixed <var>$b</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if the composed element is greater than the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if the composed element is greater than the given element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$b</var></dt>
+						<dd>the element to compare to</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the composed element is greater than the given element
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given element is not accepted by this composition
+					</div>
 
 
 
@@ -334,7 +432,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_gt">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#11" title="Go to source code">gt</a>( <span> <var>$b</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#65-68" title="Go to source code">gt</a>( <span> <var>$b</var></span> )</code>
 
 			<div class="description short">
 				
@@ -347,34 +445,51 @@
 
 
 
+					<h4>See</h4>
+					<div class="list">
+							<code><a href="class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#_greaterThan">DaybreakStudios\Common\Comparison\ComparatorComposition::greaterThan()</a></code><br>
+					</div>
 
 
 			</div>
 			</div></td>
 		</tr>
-		<tr data-order="greaterThan" id="_greaterThan">
+		<tr data-order="greaterThanOrEqualTo" id="_greaterThanOrEqualTo">
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
-			<a class="anchor" href="#_greaterThan">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#12" title="Go to source code">greaterThan</a>( <span> <var>$b</var></span> )</code>
+			<a class="anchor" href="#_greaterThanOrEqualTo">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#70-78" title="Go to source code">greaterThanOrEqualTo</a>( <span>mixed <var>$b</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if the composed element is greater than or equal to the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if the composed element is greater than or equal to the given element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$b</var></dt>
+						<dd>the element to compare to</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the composed element is greater than or equal to the given element
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if the given element is not accepted by this composition
+					</div>
 
 
 
@@ -392,36 +507,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_gte">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#13" title="Go to source code">gte</a>( <span> <var>$b</var></span> )</code>
-
-			<div class="description short">
-				
-			</div>
-
-			<div class="description detailed hidden">
-				
-
-
-
-
-
-
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="greaterThanOrEqualTo" id="_greaterThanOrEqualTo">
-
-			<td class="attributes"><code>
-				 public 
-				
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_greaterThanOrEqualTo">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#14" title="Go to source code">greaterThanOrEqualTo</a>( <span> <var>$b</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Comparison.ComparatorComposition.html#79" title="Go to source code">gte</a>( <span> <var>$b</var></span> )</code>
 
 			<div class="description short">
 				

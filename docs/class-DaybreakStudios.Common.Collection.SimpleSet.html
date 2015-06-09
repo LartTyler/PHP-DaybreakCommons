@@ -127,6 +127,12 @@
 	<h1>Class SimpleSet</h1>
 
 
+	<div class="description">
+	<p>This is the parent interface for any Collection that is a set.</p>
+
+<p>Sets do not permit duplicate entries, and may place additional restrictions on some methods inherited from the
+<code>Collection</code> interface.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -157,6 +163,8 @@
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Collection.html">Collection</a><br>
 		
 
+				<b>See:</b>
+				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code><br>
 			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#6-113" title="Go to source code">DaybreakStudios/Common/Collection/SimpleSet.php</a>
 		<br>
 	</div>
@@ -199,25 +207,40 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_add">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#15-22" title="Go to source code">add</a>( <span> <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#15-22" title="Go to source code">add</a>( <span>mixed <var>$e</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Ensures that this collection contains the given element (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Ensures that this collection contains the given element (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$e</var></dt>
+						<dd>the element to add</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection changed as a result of this call, false otherwise
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>add</code> operation is not supported<br>
+						InvalidArgumentException<br><p>if some property of the element prevented it from being added to this
+        collection (such as type).</p>
+					</div>
 
 
 
@@ -230,7 +253,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
@@ -240,15 +263,30 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#24-32" title="Go to source code">addAll</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code> <var>$c</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Ensures that this collection contains all elements present in the given collection (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Ensures that this collection contains all elements present in the given collection (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$c</var></dt>
+						<dd>the collection containing elements to add</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection changed as a result of this call, false otherwise
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>addAll</code> operation is not supported<br>
+						InvalidArgumentException<br><p>if some property of the element prevented it from being added to this
+        collection (such as type).</p>
+					</div>
 
 
 
@@ -271,15 +309,21 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#34-36" title="Go to source code">clear</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Removes all elements from this collection (optional operation). This collection will be empty following this
+call.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes all elements from this collection (optional operation). This collection will be empty following this
+call.</p>
 
 
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>clear</code> operation is not supported
+					</div>
 
 
 
@@ -292,24 +336,33 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_contains">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#38-40" title="Go to source code">contains</a>( <span> <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#38-40" title="Go to source code">contains</a>( <span>mixed <var>$e</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this collection contains the given element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this collection contains the given element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$e</var></dt>
+						<dd>the element to test for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection contains the element
+					</div>
 
 
 
@@ -323,7 +376,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
@@ -333,14 +386,23 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#42-48" title="Go to source code">containsAll</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code> <var>$c</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this collection contains all of the elements in the given collection.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this collection contains all of the elements in the given collection.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$c</var></dt>
+						<dd>the collection containing the elements to test for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection contains all elements in the given collection
+					</div>
 
 
 
@@ -354,7 +416,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
@@ -364,14 +426,18 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#50-52" title="Go to source code">isEmpty</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns true if this collection contains no elements.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns true if this collection contains no elements.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection contains no elements
+					</div>
 
 
 
@@ -407,8 +473,6 @@
 
 
 
-					<h4>Implementation of</h4>
-					<div class="list"><code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_iterator">DaybreakStudios\Common\Collection\Collection::iterator()</a></code></div>
 			</div>
 			</div></td>
 		</tr>
@@ -416,25 +480,38 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_remove">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#58-74" title="Go to source code">remove</a>( <span> <var>$e</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#58-74" title="Go to source code">remove</a>( <span>mixed <var>$e</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Removes a single instance of an object from this collection, if it is present (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes a single instance of an object from this collection, if it is present (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$e</var></dt>
+						<dd>the element to remove from this collection, if present</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection changed as a result of this call
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>remove</code> operation is not supported
+					</div>
 
 
 
@@ -447,7 +524,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
@@ -457,15 +534,28 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#76-87" title="Go to source code">removeAll</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code> <var>$c</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Removes all of this collection's elements that are also present in the give collection (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes all of this collection's elements that are also present in the give collection (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$c</var></dt>
+						<dd>the collection containing the elements that should be removed from this colleciton</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection changed as a result of this call
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>removeAll</code> operation is not supported
+					</div>
 
 
 
@@ -478,7 +568,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				boolean
 				
 				</code>
 			</td>
@@ -488,15 +578,30 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#89-100" title="Go to source code">retainAll</a>( <span><code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code> <var>$c</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Removes all elements from this collection that are not also contained in the give collection (optional
+operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Removes all elements from this collection that are not also contained in the give collection (optional
+operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$c</var></dt>
+						<dd>the collection containing all the elements that should be retained in this collection</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if this collection changed as a result of this call
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>retainAll</code> operation is not supported
+					</div>
 
 
 
@@ -509,7 +614,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				integer
 				
 				</code>
 			</td>
@@ -519,14 +624,18 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#102-104" title="Go to source code">size</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns the number of elements contained in this collection.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the number of elements contained in this collection.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br>the number of elements in this collection
+					</div>
 
 
 
@@ -540,7 +649,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				array
 				
 				</code>
 			</td>
@@ -550,14 +659,22 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#106-108" title="Go to source code">toArray</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns an array containing all of the elements in this collection. If the implementation makes an guarantees
+as to what order the elements are returned by it's iterator, this method must return the elements in the same
+order.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns an array containing all of the elements in this collection. If the implementation makes an guarantees
+as to what order the elements are returned by it's iterator, this method must return the elements in the same
+order.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						array<br>an array containing all elements in this collection
+					</div>
 
 
 
@@ -571,7 +688,7 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				Iterator
 				
 				</code>
 			</td>
@@ -581,18 +698,26 @@
 			<code><a href="source-class-DaybreakStudios.Common.Collection.SimpleSet.html#110-112" title="Go to source code">getIterator</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Returns an iterator over the elements in this collection. The iterator will always return the elements in
+the order they were added to the collection, unless otherwise specified by a specific implementation.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns an iterator over the elements in this collection. The iterator will always return the elements in
+the order they were added to the collection, unless otherwise specified by a specific implementation.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						Iterator<br>an iterator that can be used to iterator over the elements in this collection
+					</div>
 
 
 
 
-
-
-
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_getIterator">DaybreakStudios\Common\Collection\Collection::getIterator()</a></code></div>
 			</div>
 			</div></td>
 		</tr>

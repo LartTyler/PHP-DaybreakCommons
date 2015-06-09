@@ -3,11 +3,27 @@
 
 	use \InvalidArgumentException;
 
+	/**
+	 * Basic implementation of a ComparatorComposition. This class should be sufficient for operating on most
+	 * comparators, regardless of their contained type.
+	 */
 	class SimpleComparatorComposition implements ComparatorComposition {
 		private $comparator;
 		private $a;
 
+		/**
+		 * Constructs a new SimpleComparatorComposition object.
+		 *
+		 * @throws InvalidArgumentException if the given value is not accepted by the given comparator
+		 *
+		 * @param Comparator $comparator the comparator to use
+		 * @param mixed      $a          the value to compose
+		 */
 		public function __construct(Comparator $comparator, $a) {
+			if (!$comparator->accepts($a))
+				throw new InvalidArgumentException('The comparator does not accept the value you are attempting to ' .
+					'compose.');
+
 			$this->comparator = $comparator;
 			$this->a = $a;
 		}

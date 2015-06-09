@@ -127,6 +127,12 @@
 	<h1>Interface CollectionList</h1>
 
 
+	<div class="description">
+	<p>An ordered collection. Implementations of this interface have precise control over where elements in the list are
+added and removed. Elements can be accessed by their indexes.</p>
+
+<p>Lists will typically allow duplicate entries and null elements.</p>
+	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
@@ -157,7 +163,7 @@
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Collection.html">Collection</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#4-12" title="Go to source code">DaybreakStudios/Common/Collection/CollectionList.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#4-97" title="Go to source code">DaybreakStudios/Common/Collection/CollectionList.php</a>
 		<br>
 	</div>
 
@@ -177,18 +183,36 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_addAt">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#5" title="Go to source code">addAt</a>( <span> <var>$index</var></span>, <span> <var>$element</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#11-24" title="Go to source code">addAt</a>( <span>integer <var>$index</var></span>, <span>mixed <var>$element</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Inserts the given element at the given index into this list (optional operation). Shifts the element at that
+position (if there is one) and all subsequent elements (if there are any) to the right (adds one to their
+index).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Inserts the given element at the given index into this list (optional operation). Shifts the element at that
+position (if there is one) and all subsequent elements (if there are any) to the right (adds one to their
+index).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd>the index that the element should be inserted at</dd>
+						<dt><var>$element</var></dt>
+						<dd>the element to insert</dd>
+					</dl></div>
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>addAt</code> operation is not supported<br>
+						OutOfBoundsException<br>if the index is out of range (index &lt; 0 || index > size())<br>
+						InvalidArgumentException<br><p>if some property of the element prevented it from being added to this list
+        (such as type)</p>
+					</div>
 
 
 
@@ -206,18 +230,36 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_addAllAt">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#6" title="Go to source code">addAllAt</a>( <span> <var>$index</var></span>, <span><code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code> <var>$c</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#26-39" title="Go to source code">addAllAt</a>( <span>integer <var>$index</var></span>, <span><code><a href="class-DaybreakStudios.Common.Collection.Collection.html">DaybreakStudios\Common\Collection\Collection</a></code> <var>$c</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Inserts all of the elements in the given collection into this list, starting at the given index (optional
+operation). Shifts the element at that position (if there is one) and any subsequent elements (if there are
+any) to the right (adds one of their index).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Inserts all of the elements in the given collection into this list, starting at the given index (optional
+operation). Shifts the element at that position (if there is one) and any subsequent elements (if there are
+any) to the right (adds one of their index).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd>the index that the elements should be inserted at</dd>
+						<dt><var>$c</var></dt>
+						<dd>the collection containing the elements to insert into this list</dd>
+					</dl></div>
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>addAllAt</code> operation is not supported<br>
+						OutOfBoundsException<br>if the index is out of range (index &lt; 0 || index > size())<br>
+						InvalidArgumentException<br><p>if some property of an element in the collection prevented it from being
+        added  to this list (such as type)</p>
+					</div>
 
 
 
@@ -228,25 +270,38 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				mixed
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_get">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#7" title="Go to source code">get</a>( <span> <var>$index</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#41-49" title="Go to source code">get</a>( <span>integer <var>$index</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns the element at the specified index in this list.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the element at the specified index in this list.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd>the index of the element to return</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the element at the specified position in this list
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						OutOfBoundsException<br>if the index is out of range (index &lt; 0 || index >= size())
+					</div>
 
 
 
@@ -257,24 +312,36 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				integer
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_indexOf">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#8" title="Go to source code">indexOf</a>( <span> <var>$element</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#51-59" title="Go to source code">indexOf</a>( <span>mixed <var>$element</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns the index of the first occurrence of the given element in this list, or -1 if this list does not
+contain the element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the index of the first occurrence of the given element in this list, or -1 if this list does not
+contain the element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$element</var></dt>
+						<dd>the element to search for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br><p>the index of the first occurrence of the element, or -1 if this list does not contain
+                       the element</p>
+					</div>
 
 
 
@@ -286,24 +353,36 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				integer
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_lastIndexOf">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#9" title="Go to source code">lastIndexOf</a>( <span> <var>$element</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#61-69" title="Go to source code">lastIndexOf</a>( <span>mixed <var>$element</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns the index of the last occurrence of the given element in this list, or -1 if this list does not
+contain the element.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns the index of the last occurrence of the given element in this list, or -1 if this list does not
+contain the element.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$element</var></dt>
+						<dd>the element to search for</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						integer<br><p>the index of the last occurrence of the element, or -1 if this list does not contain
+                       the element</p>
+					</div>
 
 
 
@@ -322,18 +401,32 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#_set">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#10" title="Go to source code">set</a>( <span> <var>$index</var></span>, <span> <var>$element</var></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#71-82" title="Go to source code">set</a>( <span>integer <var>$index</var></span>, <span>mixed <var>$element</var></span> )</code>
 
 			<div class="description short">
-				
+				<p>Replaces the element at the given position with the given element (optional operation).</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Replaces the element at the given position with the given element (optional operation).</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$index</var></dt>
+						<dd>the index of the element to replace</dd>
+						<dt><var>$element</var></dt>
+						<dd>the element that was previously at the given index</dd>
+					</dl></div>
 
 
+					<h4>Throws</h4>
+					<div class="list">
+						BadMethodCallException<br>if the <code>set</code> operation is not supported<br>
+						OutOfBoundsException<br>if the index is out of range (index &lt; 0 || index >= size())<br>
+						InvalidArgumentException<br><p>if some property of the element prevented it from being added  to this list
+        (such as type)</p>
+					</div>
 
 
 
@@ -344,25 +437,43 @@
 
 			<td class="attributes"><code>
 				 public 
-				
+				<code><a href="class-DaybreakStudios.Common.Collection.CollectionList.html">DaybreakStudios\Common\Collection\CollectionList</a></code>
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_subList">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#11" title="Go to source code">subList</a>( <span> <var>$start</var></span>, <span> <var>$end</var> = <span class="php-keyword1">null</span></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Collection.CollectionList.html#84-96" title="Go to source code">subList</a>( <span>integer <var>$start</var></span>, <span>integer <var>$end</var> = <span class="php-keyword1">null</span></span> )</code>
 
 			<div class="description short">
-				
+				<p>Returns a portion of this list between the the <code>start</code> index, inclusive, and the <code>end</code> index, exclusive.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Returns a portion of this list between the the <code>start</code> index, inclusive, and the <code>end</code> index, exclusive.</p>
+
+<p>if <code>end</code> is larger than <code>start</code>, they will be swapped before performing this operation.</p>
 
 
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$start</var></dt>
+						<dd>the index to begin the sublist at</dd>
+						<dt><var>$end</var></dt>
+						<dd>optional; the index to end the sublist at</dd>
+					</dl></div>
 
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.Collection.CollectionList.html">DaybreakStudios\Common\Collection\CollectionList</a></code><br>the resulting sublist
+					</div>
 
+					<h4>Throws</h4>
+					<div class="list">
+						OutOfBoundsException<br><p>if start or end are out of range
+        (start &lt; 0 || end &lt; 0 || start >= size() || end > size())</p>
+					</div>
 
 
 
@@ -380,19 +491,13 @@
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_clear">clear()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_contains">contains()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_containsAll">containsAll()</a></code>, 
+				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_getIterator">getIterator()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_isEmpty">isEmpty()</a></code>, 
-				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_iterator">iterator()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_remove">remove()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_removeAll">removeAll()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_retainAll">retainAll()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_size">size()</a></code>, 
 				<code><a href="class-DaybreakStudios.Common.Collection.Collection.html#_toArray">toArray()</a></code>
-			</p>
-		</div>
-		<div class="panel panel-default">
-	        <div class="panel-heading"><h3>Methods inherited from IteratorAggregate</h3></div>
-			<p class="elementList">
-				<code>getIterator()</code>
 			</p>
 		</div>
 

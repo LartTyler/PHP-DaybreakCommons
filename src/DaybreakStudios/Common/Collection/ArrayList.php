@@ -79,7 +79,7 @@
 			return $this->size() === 0;
 		}
 
-		public function iterator() {
+		public function getIterator() {
 			return new ArrayIterator($this->elements);
 		}
 
@@ -178,10 +178,6 @@
 
 		public function toArray() {
 			return $this->elements;
-		}
-
-		public function getIterator() {
-			return $this->iterator();
 		}
 	}
 ?>
