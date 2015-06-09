@@ -66,15 +66,13 @@ class Planets extends Enum {
 		parent::register('URANUS');
 		parent::register('NEPTUNE');
 		parent::register('PLUTO');
-
-		parent::stopRegistration();
 	}
 }
 ```
 
-That's it! We now have a basic implementation of our original `Planets` class as an enum. The method call `parent::register`
-takes a variable number of arguments, but requires a minimum of one argument. The first argument is always the enums name,
-and should be formatted the same was as a PHP function:
+That's it! We now have a basic implementation of our original `Planets` class as an enum. The method call
+`parent::register` takes a variable number of arguments, but requires a minimum of one argument. The first argument is
+always the enums name, and should be formatted the same was as a PHP function:
 
 **Taken from [PHP.net](http://php.net/manual/en/functions.user-defined.php):**
 > Function names follow the same rules as other labels in PHP. A valid function name starts with a letter or
@@ -107,8 +105,6 @@ class Planets extends Enum {
 		parent::register('URANUS', 51118.0);
 		parent::register('NEPTUNE', 49532.0);
 		parent::register('PLUTO', 2274.0);
-
-		parent::stopRegistration();
 	}
 }
 ```
