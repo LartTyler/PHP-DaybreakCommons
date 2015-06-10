@@ -117,6 +117,12 @@
 			return $array;
 		}
 
+		/**
+		 * Dumps the Yaml object to a YAML string. This is the same as invoking Yaml::dump() with the Yaml object as
+		 * the first argument.
+		 *
+		 * @return string a YAML string representing the data contained in the Yaml object
+		 */
 		public function stringify() {
 			return Yaml::dump($this);
 		}

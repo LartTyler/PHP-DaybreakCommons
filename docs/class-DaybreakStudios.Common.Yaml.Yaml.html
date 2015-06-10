@@ -154,7 +154,7 @@ Symfony\Component\Yaml\Yaml
 		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.Yaml.html">Yaml</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#8-160" title="Go to source code">DaybreakStudios/Common/Yaml/Yaml.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#8-166" title="Go to source code">DaybreakStudios/Common/Yaml/Yaml.php</a>
 		<br>
 	</div>
 
@@ -388,24 +388,30 @@ Symfony\Component\Yaml\Yaml
 
 			<td class="attributes"><code>
 				 public 
-				
+				string
 				
 				</code>
 			</td>
 
 			<td class="name"><div>
 			<a class="anchor" href="#_stringify">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#120-122" title="Go to source code">stringify</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#120-128" title="Go to source code">stringify</a>( )</code>
 
 			<div class="description short">
-				
+				<p>Dumps the Yaml object to a YAML string. This is the same as invoking Yaml::dump() with the Yaml object as
+the first argument.</p>
 			</div>
 
 			<div class="description detailed hidden">
-				
+				<p>Dumps the Yaml object to a YAML string. This is the same as invoking Yaml::dump() with the Yaml object as
+the first argument.</p>
 
 
 
+					<h4>Returns</h4>
+					<div class="list">
+						string<br>a YAML string representing the data contained in the Yaml object
+					</div>
 
 
 
@@ -424,7 +430,7 @@ Symfony\Component\Yaml\Yaml
 
 			<td class="name"><div>
 			<a class="anchor" href="#_parse">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#124-138" title="Go to source code">parse</a>( <span>string <var>$input</var></span>, <span>boolean <var>$typeCheck</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$objectSupport</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#130-144" title="Go to source code">parse</a>( <span>string <var>$input</var></span>, <span>boolean <var>$typeCheck</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$objectSupport</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Parses YAML into a Yaml object.</p>
@@ -474,7 +480,7 @@ Symfony\Component\Yaml\Yaml
 
 			<td class="name"><div>
 			<a class="anchor" href="#_dump">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#140-159" title="Go to source code">dump</a>( <span>mixed <var>$array</var></span>, <span>integer <var>$inline</var> = <span class="php-num">2</span></span>, <span>integer <var>$indent</var> = <span class="php-num">4</span></span>, <span>boolean <var>$typeCheck</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$objectSupport</var> = <span class="php-keyword1">false</span></span> )</code>
+			<code><a href="source-class-DaybreakStudios.Common.Yaml.Yaml.html#146-165" title="Go to source code">dump</a>( <span>mixed <var>$array</var></span>, <span>integer <var>$inline</var> = <span class="php-num">2</span></span>, <span>integer <var>$indent</var> = <span class="php-num">4</span></span>, <span>boolean <var>$typeCheck</var> = <span class="php-keyword1">false</span></span>, <span>boolean <var>$objectSupport</var> = <span class="php-keyword1">false</span></span> )</code>
 
 			<div class="description short">
 				<p>Dumps a PHP array or a Yaml object to a YAML string. For Yaml instances, you can simply call the
