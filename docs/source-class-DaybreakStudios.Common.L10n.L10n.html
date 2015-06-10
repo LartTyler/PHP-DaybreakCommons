@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File DaybreakStudios/Common/Collection/Set.php</title>
+	<title>File DaybreakStudios/Common/L10n/L10n.php</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -146,18 +146,22 @@
 <div id="right">
 	<div id="rightInner">
 <pre id="source"><code><span id="1" class="l"><a href="#1"> 1 </a><span class="xlang">&lt;?php</span>
-</span><span id="2" class="l"><a href="#2"> 2 </a>    <span class="php-keyword1">namespace</span> DaybreakStudios\Common\Collection;
+</span><span id="2" class="l"><a href="#2"> 2 </a>    <span class="php-keyword1">namespace</span> DaybreakStudios\Common\L10n;
 </span><span id="3" class="l"><a href="#3"> 3 </a>
-</span><span id="4" class="l"><a href="#4"> 4 </a>    <span class="php-comment">/**
-</span></span><span id="5" class="l"><a href="#5"> 5 </a><span class="php-comment">     * This is the parent interface for any Collection that is a set.
-</span></span><span id="6" class="l"><a href="#6"> 6 </a><span class="php-comment">     *
-</span></span><span id="7" class="l"><a href="#7"> 7 </a><span class="php-comment">     * Sets do not permit duplicate entries, and may place additional restrictions on some methods inherited from the
-</span></span><span id="8" class="l"><a href="#8"> 8 </a><span class="php-comment">     * `Collection` interface.
-</span></span><span id="9" class="l"><a href="#9"> 9 </a><span class="php-comment">     *
-</span></span><span id="10" class="l"><a href="#10">10 </a><span class="php-comment">     * @see Collection
-</span></span><span id="11" class="l"><a href="#11">11 </a><span class="php-comment">     */</span>
-</span><span id="12" class="l"><a href="#12">12 </a>    <span class="php-keyword1">interface</span> Set <span class="php-keyword1">extends</span> Collection {}
-</span><span id="13" class="l"><a href="#13">13 </a><span class="xlang">?&gt;</span></span></code></pre>
+</span><span id="4" class="l"><a href="#4"> 4 </a>    <span class="php-keyword1">class</span> L10n {
+</span><span id="5" class="l"><a href="#5"> 5 </a>        <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> __construct(Loader <span class="php-var">$loader</span>) {
+</span><span id="6" class="l"><a href="#6"> 6 </a>
+</span><span id="7" class="l"><a href="#7"> 7 </a>        }
+</span><span id="8" class="l"><a href="#8"> 8 </a>
+</span><span id="9" class="l"><a href="#9"> 9 </a>        <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> loadYaml(Yaml <span class="php-var">$loader</span>) {
+</span><span id="10" class="l"><a href="#10">10 </a>            <span class="php-keyword1">return</span> self::load(<span class="php-var">$loader</span>);
+</span><span id="11" class="l"><a href="#11">11 </a>        }
+</span><span id="12" class="l"><a href="#12">12 </a>
+</span><span id="13" class="l"><a href="#13">13 </a>        <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> load(Loader <span class="php-var">$loader</span>) {
+</span><span id="14" class="l"><a href="#14">14 </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> L10n(<span class="php-var">$loader</span>);
+</span><span id="15" class="l"><a href="#15">15 </a>        }
+</span><span id="16" class="l"><a href="#16">16 </a>    }
+</span><span id="17" class="l"><a href="#17">17 </a><span class="xlang">?&gt;</span></span></code></pre>
 	</div>
 
 	<div id="footer">
