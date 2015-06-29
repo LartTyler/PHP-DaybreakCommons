@@ -28,7 +28,7 @@
 		 *
 		 * @throws IOException if the stream could not be read from
 		 *
-		 * @return mixed the data that was read
+		 * @return mixed the data that was read, or false if the end of the stream has been reached
 		 */
 		public function read();
 

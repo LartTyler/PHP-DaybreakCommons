@@ -18,6 +18,10 @@
 				throw new IOException(sprintf(self::ERR_READER_CLOSED, 'read'));
 
 			$row = fgetcsv($this->handle);
+
+			if ($row === false)
+				return false;
+
 			$data = [];
 
 			foreach ($this->fields as $pos => $name)
