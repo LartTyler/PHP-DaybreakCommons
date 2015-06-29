@@ -20,6 +20,15 @@
 			$this->handle = $file;
 		}
 
+		/**
+		 * Returns true if the end of the stream has been reached.
+		 *
+		 * @return boolean true if the end of the stream has been reached
+		 */
+		public function eof() {
+			return feof($this->handle);
+		}
+
 		public function close() {
 			fclose($this->handle);
 
