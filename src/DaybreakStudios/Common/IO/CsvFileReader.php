@@ -9,11 +9,11 @@
 		 * Adds a named field to a CSV row.
 		 *
 		 * @param string   $name        the name of the field
+		 * @param callable $transformer optional; a callback that can be used to transform the field value
 		 * @param int      $pos         optional; the column number of the field, if not specified it will append the
 		 *                              colum name to the list
-		 * @param callable $transformer optional; a callback that can be used to transform the field value
 		 */
-		public function addField($name, $pos = null, $transformer = null) {
+		public function addField($name, $transformer = null, $pos = null) {
 			if ($pos === null)
 				$pos = sizeof($this->fields);
 
