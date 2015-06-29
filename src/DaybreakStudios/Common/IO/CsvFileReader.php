@@ -8,7 +8,7 @@
 			if ($pos === null)
 				$pos = sizeof($this->fields);
 
-			$fields[$pos] = $name;
+			$this->fields[$pos] = $name;
 
 			return $this;
 		}
@@ -19,8 +19,8 @@
 
 			$row = fgetcsv($this->handle);
 
-			if ($row === false)
-				return false;
+			if ($row === false || empty($this->fields))
+				return $row;
 
 			$data = [];
 
