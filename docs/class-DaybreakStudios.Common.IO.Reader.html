@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Interface DaybreakStudios\Common\IO\Reader</title>
+
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
+
+</head>
+
+<body>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
+
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-DaybreakStudios.Common.IO.html" title="Summary of DaybreakStudios\Common\IO"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+					<li class="divider-vertical"></li>
+
+					<li>
+						<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+					</li>
+
+
+					<li class="divider-vertical"></li>
+
+					<li>
+						<a href="API-documentation.zip" title="Download documentation as ZIP archive"><span>Download</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+					<li class="active">
+						<a href="namespace-DaybreakStudios.html">
+							DaybreakStudios<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-DaybreakStudios.Common.html">
+							Common<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Collection.html">
+							Collection						</a>
+							</li>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Comparison.html">
+							Comparison						</a>
+							</li>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.DateTime.html">
+							DateTime						</a>
+							</li>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Enum.html">
+							Enum<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Enum.TwigCompat.html">
+							TwigCompat						</a>
+							</li>
+								</ul></li>
+					<li class="active">
+						<a href="namespace-DaybreakStudios.Common.IO.html">
+							IO						</a>
+							</li>
+					<li>
+						<a href="namespace-DaybreakStudios.Common.Yaml.html">
+							Yaml						</a>
+							</li>
+								</ul></li></ul></li>
+			</ul>
+		</div>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li><a href="class-DaybreakStudios.Common.IO.CsvFileReader.html">CsvFileReader</a></li>
+				<li><a href="class-DaybreakStudios.Common.IO.FileReader.html">FileReader</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li class="active"><a href="class-DaybreakStudios.Common.IO.Reader.html">Reader</a></li>
+			</ul>
+
+
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-DaybreakStudios.Common.IO.IOException.html">IOException</a></li>
+			</ul>
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+	<div id="rightInner">
+<div id="content" class="class">
+	<h1>Interface Reader</h1>
+
+
+
+
+
+
+
+	<div>
+		<h3>Direct known implementers</h3>
+		<p class="elementList">
+			<code><a href="class-DaybreakStudios.Common.IO.FileReader.html">DaybreakStudios\Common\IO\FileReader</a></code>
+		</p>
+	</div>
+
+	<div>
+		<h3>Indirect known implementers</h3>
+		<p class="elementList">
+			<code><a href="class-DaybreakStudios.Common.IO.CsvFileReader.html">DaybreakStudios\Common\IO\CsvFileReader</a></code>
+		</p>
+	</div>
+
+
+
+	<div class="alert alert-info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.IO.html">IO</a><br>
+		
+
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.IO.Reader.html#4-59" title="Go to source code">DaybreakStudios/Common/IO/Reader.php</a>
+		<br>
+	</div>
+
+
+
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="close" id="_close">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_close">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.IO.Reader.html#5-8" title="Go to source code">close</a>( )</code>
+
+			<div class="description short">
+				<p>Closes the stream and frees any resources associated with it.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Closes the stream and frees any resources associated with it.</p>
+
+
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="mark" id="_mark">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_mark">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.IO.Reader.html#10-17" title="Go to source code">mark</a>( <span>integer <var>$lim</var></span> )</code>
+
+			<div class="description short">
+				<p>Marks the current location in the stream.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Marks the current location in the stream.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$lim</var></dt>
+						<dd>the number of characters that may be read before the mark is cleared</dd>
+					</dl></div>
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.IO.IOException.html">DaybreakStudios\Common\IO\IOException</a></code><br>if the stream does not support the mark operation
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isMarkSupported" id="_isMarkSupported">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isMarkSupported">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.IO.Reader.html#19-24" title="Go to source code">isMarkSupported</a>( )</code>
+
+			<div class="description short">
+				<p>Returns true if the reader supports marking streams.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns true if the reader supports marking streams.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if mark is supported, false otherwise
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="read" id="_read">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_read">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.IO.Reader.html#26-33" title="Go to source code">read</a>( )</code>
+
+			<div class="description short">
+				<p>Reads data from the stream. The return value of this function is dependant on the implementation.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Reads data from the stream. The return value of this function is dependant on the implementation.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed<br>the data that was read, or false if the end of the stream has been reached
+					</div>
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.IO.IOException.html">DaybreakStudios\Common\IO\IOException</a></code><br>if the stream could not be read from
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="ready" id="_ready">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_ready">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.IO.Reader.html#35-40" title="Go to source code">ready</a>( )</code>
+
+			<div class="description short">
+				<p>Returns true if the stream is ready to be read from.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns true if the stream is ready to be read from.</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean<br>true if the stream is ready to be read from
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="reset" id="_reset">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_reset">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.IO.Reader.html#42-48" title="Go to source code">reset</a>( )</code>
+
+			<div class="description short">
+				<p>Resets the stream to the last marked position.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Resets the stream to the last marked position.</p>
+
+
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						<code><a href="class-DaybreakStudios.Common.IO.IOException.html">DaybreakStudios\Common\IO\IOException</a></code><br><p>if the stream has not been marked, the mark has been invalidated, or the stream does not
+        support the reset operation</p>
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="skip" id="_skip">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_skip">#</a>
+			<code><a href="source-class-DaybreakStudios.Common.IO.Reader.html#50-58" title="Go to source code">skip</a>( <span>integer <var>$len</var></span> )</code>
+
+			<div class="description short">
+				<p>Moves the stream forward $len characters.</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Moves the stream forward $len characters.</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$len</var></dt>
+						<dd>the number of characters to move forward</dd>
+					</dl></div>
+
+
+					<h4>Throws</h4>
+					<div class="list">
+						InvalidArgumentException<br>if $len is negative<br>
+						<code><a href="class-DaybreakStudios.Common.IO.IOException.html">DaybreakStudios\Common\IO\IOException</a></code><br>if there is a problem accessing the stream
+					</div>
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+	</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>

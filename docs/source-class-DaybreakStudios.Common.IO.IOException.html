@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
 
-	<title>File DaybreakStudios/Common/L10n/L10n.php</title>
+	<title>File DaybreakStudios/Common/IO/IOException.php</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -89,8 +89,8 @@
 							</li>
 								</ul></li>
 					<li>
-						<a href="namespace-DaybreakStudios.Common.L10n.html">
-							L10n						</a>
+						<a href="namespace-DaybreakStudios.Common.IO.html">
+							IO						</a>
 							</li>
 					<li>
 						<a href="namespace-DaybreakStudios.Common.Yaml.html">
@@ -120,7 +120,8 @@
 				<li><a href="class-DaybreakStudios.Common.Enum.EnumUtil.html">DaybreakStudios\Common\Enum\EnumUtil</a></li>
 				<li><a href="class-DaybreakStudios.Common.Enum.TwigCompat.EnumExtension.html">DaybreakStudios\Common\Enum\TwigCompat\EnumExtension</a></li>
 				<li><a href="class-DaybreakStudios.Common.Enum.TwigCompat.EnumWrapper.html">DaybreakStudios\Common\Enum\TwigCompat\EnumWrapper</a></li>
-				<li><a href="class-DaybreakStudios.Common.L10n.L10n.html">DaybreakStudios\Common\L10n\L10n</a></li>
+				<li><a href="class-DaybreakStudios.Common.IO.CsvFileReader.html">DaybreakStudios\Common\IO\CsvFileReader</a></li>
+				<li><a href="class-DaybreakStudios.Common.IO.FileReader.html">DaybreakStudios\Common\IO\FileReader</a></li>
 				<li><a href="class-DaybreakStudios.Common.Yaml.Yaml.html">DaybreakStudios\Common\Yaml\Yaml</a></li>
 			</ul>
 
@@ -132,9 +133,14 @@
 				<li><a href="class-DaybreakStudios.Common.Collection.Set.html">DaybreakStudios\Common\Collection\Set</a></li>
 				<li><a href="class-DaybreakStudios.Common.Comparison.Comparator.html">DaybreakStudios\Common\Comparison\Comparator</a></li>
 				<li><a href="class-DaybreakStudios.Common.Comparison.ComparatorComposition.html">DaybreakStudios\Common\Comparison\ComparatorComposition</a></li>
+				<li><a href="class-DaybreakStudios.Common.IO.Reader.html">DaybreakStudios\Common\IO\Reader</a></li>
 			</ul>
 
 
+			<h3>Exceptions</h3>
+			<ul>
+				<li><a href="class-DaybreakStudios.Common.IO.IOException.html">DaybreakStudios\Common\IO\IOException</a></li>
+			</ul>
 
 
 		</div>
@@ -146,22 +152,16 @@
 <div id="right">
 	<div id="rightInner">
 <pre id="source"><code><span id="1" class="l"><a href="#1"> 1 </a><span class="xlang">&lt;?php</span>
-</span><span id="2" class="l"><a href="#2"> 2 </a>    <span class="php-keyword1">namespace</span> DaybreakStudios\Common\L10n;
+</span><span id="2" class="l"><a href="#2"> 2 </a>    <span class="php-keyword1">namespace</span> DaybreakStudios\Common\IO;
 </span><span id="3" class="l"><a href="#3"> 3 </a>
-</span><span id="4" class="l"><a href="#4"> 4 </a>    <span class="php-keyword1">class</span> L10n {
-</span><span id="5" class="l"><a href="#5"> 5 </a>        <span class="php-keyword1">private</span> <span class="php-keyword1">function</span> __construct(Loader <span class="php-var">$loader</span>) {
-</span><span id="6" class="l"><a href="#6"> 6 </a>
-</span><span id="7" class="l"><a href="#7"> 7 </a>        }
-</span><span id="8" class="l"><a href="#8"> 8 </a>
-</span><span id="9" class="l"><a href="#9"> 9 </a>        <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> loadYaml(Yaml <span class="php-var">$loader</span>) {
-</span><span id="10" class="l"><a href="#10">10 </a>            <span class="php-keyword1">return</span> self::load(<span class="php-var">$loader</span>);
-</span><span id="11" class="l"><a href="#11">11 </a>        }
-</span><span id="12" class="l"><a href="#12">12 </a>
-</span><span id="13" class="l"><a href="#13">13 </a>        <span class="php-keyword1">public</span> <span class="php-keyword1">static</span> <span class="php-keyword1">function</span> load(Loader <span class="php-var">$loader</span>) {
-</span><span id="14" class="l"><a href="#14">14 </a>            <span class="php-keyword1">return</span> <span class="php-keyword1">new</span> L10n(<span class="php-var">$loader</span>);
-</span><span id="15" class="l"><a href="#15">15 </a>        }
-</span><span id="16" class="l"><a href="#16">16 </a>    }
-</span><span id="17" class="l"><a href="#17">17 </a><span class="xlang">?&gt;</span></span></code></pre>
+</span><span id="4" class="l"><a href="#4"> 4 </a>    <span class="php-keyword1">use</span> \Exception;
+</span><span id="5" class="l"><a href="#5"> 5 </a>
+</span><span id="6" class="l"><a href="#6"> 6 </a>    <span class="php-keyword1">class</span> IOException <span class="php-keyword1">extends</span> Exception {
+</span><span id="7" class="l"><a href="#7"> 7 </a>        <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> __construct(<span class="php-var">$msg</span>) {
+</span><span id="8" class="l"><a href="#8"> 8 </a>            parent::__construct(<span class="php-var">$msg</span>);
+</span><span id="9" class="l"><a href="#9"> 9 </a>        }
+</span><span id="10" class="l"><a href="#10">10 </a>    }
+</span><span id="11" class="l"><a href="#11">11 </a><span class="xlang">?&gt;</span></span></code></pre>
 	</div>
 
 	<div id="footer">
@@ -169,6 +169,6 @@
 	</div>
 </div>
 <script src="resources/combined.js?533e23ef2f02bd4b20548834a028566b6eb403e0"></script>
-<script src="elementlist.js?eee41b0edd45148c3a0ce4e139bef62c7393ddb3"></script>
+<script src="elementlist.js?c756b36ffc50bd8140cdb1e5b1d839832d2f6f7c"></script>
 </body>
 </html>
