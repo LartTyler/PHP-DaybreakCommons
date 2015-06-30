@@ -35,7 +35,7 @@
 		 */
 		public function addFields(array $fields) {
 			foreach ($fields as $k => $v)
-				if (is_callable($v))
+				if (is_string($k))
 					$this->addField($k, $v);
 				else
 					$this->addField($v);
