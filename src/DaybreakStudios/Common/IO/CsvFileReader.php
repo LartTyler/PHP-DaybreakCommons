@@ -12,6 +12,7 @@
 		 * @param callable $transformer optional; a callback that can be used to transform the field value
 		 * @param int      $pos         optional; the column number of the field, if not specified it will append the
 		 *                              colum name to the list
+		 * @return CsvFileReader  		an object reference for method chaining
 		 */
 		public function addField($name, $transformer = null, $pos = null) {
 			if ($pos === null)
