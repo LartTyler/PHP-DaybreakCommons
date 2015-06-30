@@ -1,6 +1,8 @@
 <?php
 	namespace DaybreakStudios\Common\IO;
 
+	use \RuntimeException;
+
 	class CsvFileReader extends FileReader {
 		protected $fields = [];
 		protected $transformers = [];
@@ -22,6 +24,8 @@
 
 			if (is_callable($transformer))
 				$this->transformers[$pos] = $transformer;
+			else if ($transformer !== null)
+				throw new RuntimeException('The transformer provided for ' . $name . ' is not callable');
 
 			return $this;
 		}
