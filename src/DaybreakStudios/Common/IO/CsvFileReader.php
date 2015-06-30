@@ -26,6 +26,23 @@
 			return $this;
 		}
 
+		/**
+		 * Adds multiple fields with an optional transformer to a CSV row.
+		 *
+		 * @param array $fields the fields to add; can either be an array of string names, or an associative array where
+		 *                      the array key is the field name, and the value is the transformer to use for that column
+		 * @return CsvFileReader an object reference for method chaining
+		 */
+		public function addFields(array $fields) {
+			foreach ($fields as $k => $v)
+				if (is_callable($v))
+					$this->addField($k, $v);
+				else
+					$this->addField($v);
+
+			return $this;
+		}
+
 		public function read() {
 			if (!$this->ready())
 				throw new IOException(sprintf(self::ERR_READER_CLOSED, 'read'));
