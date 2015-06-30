@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>Class DaybreakStudios\Common\DateTime\DateComparator</title>
+	<title>Class DaybreakStudios\Common\IO\IOException</title>
 
 	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
 	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
@@ -28,7 +28,7 @@
 
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="namespace-DaybreakStudios.Common.DateTime.html" title="Summary of DaybreakStudios\Common\DateTime"><span>Namespace</span></a>
+						<a href="namespace-DaybreakStudios.Common.IO.html" title="Summary of DaybreakStudios\Common\IO"><span>Namespace</span></a>
 					</li>
 					<li class="active">
 <span>Class</span>					</li>
@@ -74,7 +74,7 @@
 						<a href="namespace-DaybreakStudios.Common.Comparison.html">
 							Comparison						</a>
 							</li>
-					<li class="active">
+					<li>
 						<a href="namespace-DaybreakStudios.Common.DateTime.html">
 							DateTime						</a>
 							</li>
@@ -88,7 +88,7 @@
 							TwigCompat						</a>
 							</li>
 								</ul></li>
-					<li>
+					<li class="active">
 						<a href="namespace-DaybreakStudios.Common.IO.html">
 							IO						</a>
 							</li>
@@ -104,14 +104,20 @@
 		<div id="elements">
 			<h3>Classes</h3>
 			<ul>
-				<li><a href="class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html">AbstractDateTimeAwareComparator</a></li>
-				<li class="active"><a href="class-DaybreakStudios.Common.DateTime.DateComparator.html">DateComparator</a></li>
-				<li><a href="class-DaybreakStudios.Common.DateTime.DateTimeComparator.html">DateTimeComparator</a></li>
-				<li><a href="class-DaybreakStudios.Common.DateTime.TimeComparator.html">TimeComparator</a></li>
+				<li><a href="class-DaybreakStudios.Common.IO.CsvFileReader.html">CsvFileReader</a></li>
+				<li><a href="class-DaybreakStudios.Common.IO.FileReader.html">FileReader</a></li>
+			</ul>
+
+			<h3>Interfaces</h3>
+			<ul>
+				<li><a href="class-DaybreakStudios.Common.IO.Reader.html">Reader</a></li>
 			</ul>
 
 
-
+			<h3>Exceptions</h3>
+			<ul>
+				<li class="active"><a href="class-DaybreakStudios.Common.IO.IOException.html">IOException</a></li>
+			</ul>
 
 
 		</div>
@@ -123,25 +129,19 @@
 <div id="right">
 	<div id="rightInner">
 <div id="content" class="class">
-	<h1>Class DateComparator</h1>
+	<h1>Class IOException</h1>
 
 
-	<div class="description">
-	<p>A general contract for comparisons.</p>
-	</div>
 
 	<dl class="tree well">
 		<dd style="padding-left:0px">
-			<a href="class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html"><span>DaybreakStudios\Common\DateTime\AbstractDateTimeAwareComparator</span></a>
-			
-			 implements 
-				<a href="class-DaybreakStudios.Common.Comparison.Comparator.html"><span>DaybreakStudios\Common\Comparison\Comparator</span></a>
+Exception
 			
 			
 		</dd>
 		<dd style="padding-left:30px">
 			<img src="resources/inherit.png" alt="Extended by">
-<b><span>DaybreakStudios\Common\DateTime\DateComparator</span></b>			
+<b><span>DaybreakStudios\Common\IO\IOException</span></b>			
 			
 			
 		</dd>
@@ -157,10 +157,10 @@
 	<div class="alert alert-info">
 		
 		
-		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.DateTime.html">DateTime</a><br>
+		<b>Namespace:</b> <a href="namespace-DaybreakStudios.html">DaybreakStudios</a>\<a href="namespace-DaybreakStudios.Common.html">Common</a>\<a href="namespace-DaybreakStudios.Common.IO.html">IO</a><br>
 		
 
-			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.DateTime.DateComparator.html#7-37" title="Go to source code">DaybreakStudios/Common/DateTime/DateComparator.php</a>
+			<b>Located at</b> <a href="source-class-DaybreakStudios.Common.IO.IOException.html#6-10" title="Go to source code">DaybreakStudios/Common/IO/IOException.php</a>
 		<br>
 	</div>
 
@@ -180,7 +180,7 @@
 
 			<td class="name"><div>
 			<a class="anchor" href="#___construct">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.DateTime.DateComparator.html#8-10" title="Go to source code">__construct</a>( )</code>
+			<code><a href="source-class-DaybreakStudios.Common.IO.IOException.html#7-9" title="Go to source code">__construct</a>( <span> <var>$msg</var></span> )</code>
 
 			<div class="description short">
 				
@@ -195,51 +195,7 @@
 
 
 					<h4>Overrides</h4>
-					<div class="list"><code><a href="class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#___construct">DaybreakStudios\Common\DateTime\AbstractDateTimeAwareComparator::__construct</a></code></div>
-
-			</div>
-			</div></td>
-		</tr>
-		<tr data-order="compare" id="_compare">
-
-			<td class="attributes"><code>
-				 public 
-				integer
-				
-				</code>
-			</td>
-
-			<td class="name"><div>
-			<a class="anchor" href="#_compare">#</a>
-			<code><a href="source-class-DaybreakStudios.Common.DateTime.DateComparator.html#12-36" title="Go to source code">compare</a>( <span>mixed <var>$a</var></span>, <span>mixed <var>$b</var></span> )</code>
-
-			<div class="description short">
-				<p>Compares <code>$a</code> to <code>$b</code> and determines which is greater.</p>
-			</div>
-
-			<div class="description detailed hidden">
-				<p>Compares <code>$a</code> to <code>$b</code> and determines which is greater.</p>
-
-
-					<h4>Parameters</h4>
-					<div class="list"><dl>
-						<dt><var>$a</var></dt>
-						<dd>the element being compared</dd>
-						<dt><var>$b</var></dt>
-						<dd>the element to compare against</dd>
-					</dl></div>
-
-					<h4>Returns</h4>
-					<div class="list">
-						integer<br>-1 if a &lt; b, 0 if a == b, 1 if a > b
-					</div>
-
-					<h4>Throws</h4>
-					<div class="list">
-						InvalidArgumentException<br>if either value is not accepted by this comparator
-					</div>
-
-
+					<div class="list"><code>Exception::__construct</code></div>
 
 			</div>
 			</div></td>
@@ -248,11 +204,16 @@
 		</div>
 
 		<div class="panel panel-default">
-	        <div class="panel-heading"><h3>Methods inherited from <a href="class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#methods">DaybreakStudios\Common\DateTime\AbstractDateTimeAwareComparator</a></h3></div>
+	        <div class="panel-heading"><h3>Methods inherited from Exception</h3></div>
 			<p class="elementList">
-				<code><a href="class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#_accepts">accepts()</a></code>, 
-				<code><a href="class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#_copyAndNormalize">copyAndNormalize()</a></code>, 
-				<code><a href="class-DaybreakStudios.Common.DateTime.AbstractDateTimeAwareComparator.html#_is">is()</a></code>
+				<code>__toString()</code>, 
+				<code>getCode()</code>, 
+				<code>getFile()</code>, 
+				<code>getLine()</code>, 
+				<code>getMessage()</code>, 
+				<code>getPrevious()</code>, 
+				<code>getTrace()</code>, 
+				<code>getTraceAsString()</code>
 			</p>
 		</div>
 
@@ -260,6 +221,24 @@
 
 
 
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+		</div>
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h3>Properties inherited from Exception</h3></div>
+			<p class="elementList">
+				<code><var>$code</var></code>, 
+				<code><var>$file</var></code>, 
+				<code><var>$line</var></code>, 
+				<code><var>$message</var></code>
+			</p>
+		</div>
 
 
 
