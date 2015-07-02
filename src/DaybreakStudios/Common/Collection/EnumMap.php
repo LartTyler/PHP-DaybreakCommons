@@ -10,6 +10,8 @@
 		private $class;
 
 		public function __construct($class) {
+			parent::__construct();
+
 			if (!EnumUtil::isEnumClass($class))
 				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
 
@@ -20,45 +22,21 @@
 			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
-			return isset($this->entries[$key->ordinal()]);
+			return parent::containsKey($key->ordinal());
 		}
 
 		public function get($key, $def = null) {
 			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
-			if (isset($this->entries[$key->ordinal()]))
-				return $this->entries[$key->ordinal()]->getValue();
-
-			return $def;
+			return parent::get($key->ordinal(), $def);
 		}
 
 		public function put($key, $value) {
 			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
-			$entry = null;
-
-			foreach ($this->entries as $e)
-				if ($e->getKey() === $key) {
-					$entry = $e;
-
-					break;
-				}
-
-			if ($entry === null) {
-				$entry = new SimpleEntry($key, $value);
-
-				$this->entries[$key->ordinal()] = $entry;
-
-				return null;
-			}
-
-			$orig = $entry->getValue();
-
-			$entry->setValue($value);
-
-			return $orig;
+			return parent::put($key->ordinal(), $value);
 		}
 
 		public function putAll(Map $map) {
@@ -73,14 +51,7 @@
 			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
-			if (!isset($this->entries[$key->ordinal()]))
-				return null;
-
-			$entry = $this->entries[$key->ordinal()];
-
-			unset($this->entries[$key->ordinal()]);
-
-			return $entry->getValue();
+			return parent::remove($key->ordinal());
 		}
 	}
 ?>

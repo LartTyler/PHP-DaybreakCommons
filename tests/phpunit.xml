@@ -6,5 +6,8 @@
 		<testsuite name="EnumMap">
 			<file>EnumMapTest.php</file>
 		</testsuite>
+		<testsuite name="Enum">
+			<file>EnumTest.php</file>
+		</testsuite>
 	</testsuites>
 </phpunit>

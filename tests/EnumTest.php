@@ -3,11 +3,11 @@
 
 	class EnumTest extends PHPUnit_Framework_TestCase {
 		public function testInit() {
-			$this->assertEquals(TestEnum::A()->name(), 'A');
+			$this->assertEquals(EnumTestTestEnum::A()->name(), 'A');
 		}
 
 		public function testMethod() {
-			$this->assertEquals(TestEnum::A()->getAlt(), 'a');
+			$this->assertEquals(EnumTestTestEnum::A()->getAlt(), 'a');
 		}
 
 		/**
@@ -19,11 +19,16 @@
 		}
 
 		public function testInitNoCtor() {
-			$this->assertEquals(TestEnumNoConstruct::Z()->name(), 'Z');
+			$this->assertEquals(EnumTestTestEnumNoConstruct::Z()->name(), 'Z');
+		}
+
+		public function testToString() {
+			echo "\n\nTestEnum::" . EnumTestTestEnum::A() . "\n\n";
+			$this->assertEquals('TestEnum::' . EnumTestTestEnum::A(), 'TestEnum::A');
 		}
 	}
 
-	class TestEnum extends Enum {
+	class EnumTestTestEnum extends Enum {
 		private $alt;
 
 		protected function __construct($alt) {
@@ -36,16 +41,12 @@
 
 		protected static function init() {
 			parent::register('A', 'a');
-
-			parent::stopRegistration();
 		}
 	}
 
-	class TestEnumNoConstruct extends Enum {
+	class EnumTestTestEnumNoConstruct extends Enum {
 		protected static function init() {
 			parent::register('Z');
-
-			parent::stopRegistration();
 		}
 	}
 ?>

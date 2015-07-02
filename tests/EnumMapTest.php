@@ -4,36 +4,30 @@
 
 	class EnumMapTest extends PHPUnit_Framework_TestCase {
 		public function testSimpleGetAndPut() {
-			$map = new EnumMap('TestEnum');
+			$map = new EnumMap('EnumMapTestTestEnum');
 
-			$this->assertEquals($map->get(TestEnum::A()), null);
+			$this->assertEquals($map->get(EnumMapTestTestEnum::A()), null);
 
-			$map->put(TestEnum::A(), 'test');
+			$map->put(EnumMapTestTestEnum::A(), 'test');
 
-			$this->assertEquals($map->get(TestEnum::A()), 'test');
+			$this->assertEquals($map->get(EnumMapTestTestEnum::A()), 'test');
 		}
 
 		/**
 		 * @expectedException InvalidArgumentException
 		 */
 		public function testBadKey() {
-			$map = new EnumMap('TestEnum');
+			$map = new EnumMap('EnumMapTestTestEnum');
 
 			$map->put('test', 'value');
 		}
 	}
 
-	class TestEnum extends Enum {
-		public function __construct() {}
-
+	class EnumMapTestTestEnum extends Enum {
 		public static function init() {
 			parent::register('A');
 			parent::register('B');
 			parent::register('C');
-
-			parent::stopRegistration();
 		}
 	}
-
-	TestEnum::init();
 ?>
