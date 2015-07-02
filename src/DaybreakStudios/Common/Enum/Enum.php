@@ -72,6 +72,10 @@
 			return $this->ordinal;
 		}
 
+		public function __toString() {
+			return $this->name();
+		}
+
 		/**
 		 * Internal use only. Sets the name property of an enum element.
 		 *
