@@ -10,6 +10,8 @@
 		private $class;
 
 		public function __construct($class) {
+			parent::__construct();
+
 			if (!EnumUtil::isEnumClass($class))
 				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
 
