@@ -39,6 +39,8 @@
 		 */
 		public function set($key, $value) {
 			$this->counts->put($key, $value);
+
+			return $this;
 		}
 
 		/**
