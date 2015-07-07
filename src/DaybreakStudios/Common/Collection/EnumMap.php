@@ -3,11 +3,13 @@
 
 	use \InvalidArgumentException;
 
+	use DaybreakStudios\Common\Collection\EnumSet;
 	use DaybreakStudios\Common\Enum\Enum;
 	use DaybreakStudios\Common\Enum\EnumUtil;
 
 	class EnumMap extends SimpleMap {
-		private $class;
+		protected $entries;
+		protected $class;
 
 		public function __construct($class) {
 			parent::__construct();
@@ -16,27 +18,34 @@
 				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
 
 			$this->class = $class;
+			$this->entries = new EnumSet($class);
 		}
 
 		public function containsKey($key) {
 			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
-			return parent::containsKey($key->ordinal());
+			return isset($this->entries[$key->ordinal()]);
 		}
 
 		public function get($key, $def = null) {
 			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
+			else if ($this->containsKey($key))
+				return $this->entries[$key->ordinal()];
 
-			return parent::get($key->ordinal(), $def);
+			return $def;
 		}
 
 		public function put($key, $value) {
 			if (!EnumUtil::isEnum($key, $this->class))
 				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
 
-			return parent::put($key->ordinal(), $value);
+			$previous = $this->get($key);
+
+			$this->entries[$key->ordinal()] = $value;
+
+			return $previous;
 		}
 
 		public function putAll(Map $map) {
