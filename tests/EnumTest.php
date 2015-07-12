@@ -23,7 +23,6 @@
 		}
 
 		public function testToString() {
-			echo "\n\nTestEnum::" . EnumTestTestEnum::A() . "\n\n";
 			$this->assertEquals('TestEnum::' . EnumTestTestEnum::A(), 'TestEnum::A');
 		}
 	}
