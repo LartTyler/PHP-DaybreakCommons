@@ -87,7 +87,7 @@
 			$map->put($keys[0], 'value');
 			$map->put($keys[1], 'value2');
 
-			$this->assertEquals($map->keySet(), $keys);
+			$this->assertEquals($map->keySet()->toArray(), $keys);
 		}
 
 		public function testValues() {
@@ -101,7 +101,7 @@
 			$map->put('test1', $values[0]);
 			$map->put('test2', $values[1]);
 
-			$this->assertEquals($map->values(), $values);
+			$this->assertEquals($map->values()->toArray(), $values);
 		}
 
 		public function testToArray() {
