@@ -23,7 +23,7 @@
 		}
 
 		public function clear() {
-			$this->parent->clear();
+			$this->entries = [];
 		}
 
 		public function contains($e) {
