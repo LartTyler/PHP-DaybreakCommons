@@ -38,10 +38,6 @@
 			return parent::remove($e);
 		}
 
-		public function size() {
-			return $this->parent->size();
-		}
-
 		protected function typeCheck($e) {
 			if (!($e instanceof Entry))
 				throw new InvalidArgumentException('$e must be an instance of DaybreakStudios\\Common\\Collection\\Map\\Entry');
