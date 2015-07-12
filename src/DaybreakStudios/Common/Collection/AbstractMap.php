@@ -2,6 +2,7 @@
 	namespace DaybreakStudios\Common\Collection;
 
 	use \BadMethodCallException;
+	use \UnexpectedValueException;
 
 	use DaybreakStudios\Common\Collection\Map\KeySet;
 	use DaybreakStudios\Common\Collection\Map\ValueCollection;
