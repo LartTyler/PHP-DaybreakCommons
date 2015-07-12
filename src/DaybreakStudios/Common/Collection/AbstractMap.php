@@ -55,7 +55,7 @@
 		}
 
 		public function putAll(Map $m) {
-			foreach ($map->entrySet() as $entry)
+			foreach ($m->entrySet() as $entry)
 				$this->put($entry->getKey(), $entry->getValue());
 		}
 
