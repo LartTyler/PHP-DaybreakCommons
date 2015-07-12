@@ -15,6 +15,10 @@
 			return true;
 		}
 
+		public function clear() {
+			$this->entries = [];
+		}
+
 		public function getIterator() {
 			return new ArrayIterator($this->entries);
 		}
