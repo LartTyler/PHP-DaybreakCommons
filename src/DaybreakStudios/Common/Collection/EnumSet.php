@@ -163,10 +163,13 @@
 		 * @param  Enum $values,... zero or more values that the resulting EnumSet should contain
 		 * @return EnumSet 			the resulting EnumSet
 		 */
-		public static function of($class, ... $values) {
+		public static function of($class/* , ... $values */) {
 			if (!EnumUtil::isEnumClass($class))
 				throw new InvalidArgumentException($class .
 					' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
+
+			$values = func_get_args();
+			array_shift($values);
 
 			return new EnumSet($class, $values);
 		}
