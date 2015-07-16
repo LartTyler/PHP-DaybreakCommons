@@ -15,6 +15,7 @@
 	 */
 	class EnumSet extends SimpleSet {
 		protected $class;
+		protected $entries = 0;
 		protected $universe = array();
 
 		public function __construct($class, array $elements = array()) {
@@ -27,8 +28,6 @@
 
 				$bit *= 2;
 			}
-
-			$this->elements = 0;
 
 			foreach ($elements as $e)
 				$this->add($e);
@@ -50,13 +49,13 @@
 			if ($this->contains($e))
 				return false;
 
-			$this->elements |= $this->universe[$e->ordinal()];
+			$this->entries |= $this->universe[$e->ordinal()];
 
 			return true;
 		}
 
 		public function clear() {
-			$this->elements = 0;
+			$this->entries = 0;
 		}
 
 		/**
@@ -69,7 +68,7 @@
 			if (!EnumUtil::isEnum($e, $this->class))
 				throw new InvalidArgumentException(sprintf('Element must be an instance of %s.', $this->class));
 
-			return ($this->elements & $this->universe[$e->ordinal()]) !== 0;
+			return ($this->entries & $this->universe[$e->ordinal()]) !== 0;
 		}
 
 		public function getIterator() {
@@ -89,7 +88,7 @@
 			if (!$this->contains($e))
 				return false;
 
-			$this->elements &= ~$this->universe[$e->ordinal()];
+			$this->entries &= ~$this->universe[$e->ordinal()];
 
 			return true;
 		}
@@ -98,7 +97,7 @@
 			$s = 0;
 
 			foreach ($this->universe as $bit)
-				if (($this->elements & $bit) !== 0)
+				if (($this->entries & $bit) !== 0)
 					$s++;
 
 			return $s;

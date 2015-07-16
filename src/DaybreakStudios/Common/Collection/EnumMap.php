@@ -3,55 +3,67 @@
 
 	use \InvalidArgumentException;
 
-	use DaybreakStudios\Common\Enum\Enum;
+	use DaybreakStudios\Common\Collection\Map\EnumEntrySet;
+	use DaybreakStudios\Common\Collection\Map\SimpleEntry;
 	use DaybreakStudios\Common\Enum\EnumUtil;
 
-	class EnumMap extends SimpleMap {
-		private $class;
+	class EnumMap extends AbstractMap {
+		protected $entries;
+		protected $class;
 
 		public function __construct($class) {
-			parent::__construct();
-
 			if (!EnumUtil::isEnumClass($class))
-				throw new InvalidArgumentException($class . ' is not loaded or does not extend DaybreakStudios\Common\Enum\Enum.');
+				throw new InvalidArgumentException('$class must be the full namespace to an enum');
 
+			$this->entries = new EnumEntrySet($this, $class);
 			$this->class = $class;
 		}
 
 		public function containsKey($key) {
-			if (!EnumUtil::isEnum($key, $this->class))
-				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
+			$this->typeCheck($key);
 
-			return parent::containsKey($key->ordinal());
+			return $this->entries->containsKey($key);
+		}
+
+		public function entrySet() {
+			return $this->entries;
 		}
 
 		public function get($key, $def = null) {
-			if (!EnumUtil::isEnum($key, $this->class))
-				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
+			$this->typeCheck($key);
 
-			return parent::get($key->ordinal(), $def);
+			if (!$this->entries->containsKey($key))
+				return $def;
+
+			return $this->entrySet()->get($key)->getValue();
 		}
 
 		public function put($key, $value) {
-			if (!EnumUtil::isEnum($key, $this->class))
-				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
+			$this->typeCheck($key);
 
-			return parent::put($key->ordinal(), $value);
+			$entry = $this->entries->get($key);
+
+			if ($entry === null) {
+				$this->entries->add(new SimpleEntry($key, $value));
+
+				return null;
+			}
+
+			return $entry->setValue($value);
 		}
 
-		public function putAll(Map $map) {
-			if (!($map instanceof EnumMap))
-				throw new InvalidArgumentException('EnumMap#putAll may only be called with another EnumMap as an argument.');
+		public function toArray() {
+			$array = [];
 
-			foreach ($map->entrySet() as $entry)
-				$this->put($entry->getKey(), $entry->getValue());
+			foreach ($this->entrySet() as $entry)
+				$array[$entry->getKey()->ordinal()] = $entry->getValue();
+
+			return $array;
 		}
 
-		public function remove($key) {
-			if (!EnumUtil::isEnum($key, $this->class))
-				throw new InvalidArgumentException(sprintf('$key must be an instance of %s.', $this->class));
-
-			return parent::remove($key->ordinal());
+		protected function typeCheck($key) {
+			if (!($key instanceof $this->class))
+				throw new InvalidArgumentException('$key must be an instance of ' . $this->class);
 		}
 	}
 ?>

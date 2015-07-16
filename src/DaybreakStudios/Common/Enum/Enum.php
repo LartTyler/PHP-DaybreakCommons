@@ -217,6 +217,16 @@
 		}
 
 		/**
+		 * Gets the fully-qualified namespace of the enum. This is intended as a utility method for the EnumSet and
+		 * EnumMap from the Collections suites, though it may be utilized elsewhere.
+		 *
+		 * @return string the full namespace of the enum
+		 */
+		public static final function ns() {
+			return get_called_class();
+		}
+
+		/**
 		 * Initializes the values of an enum.
 		 *
 		 * This method should ALWAYS be overridden when extending Enum.
