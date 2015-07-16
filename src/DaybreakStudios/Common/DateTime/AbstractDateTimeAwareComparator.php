@@ -31,7 +31,7 @@
 		 * @param DateTime $args,... a varargs list of DateTime objects
 		 * @return  				 array an array containing the cloned and normalized DateTime objects
 		 */
-		protected function copyAndNormalize(... $args) {
+		protected function copyAndNormalize(/* ... $args */) {
 			if ($this->utcTimezone === null)
 				$this->utcTimezone = new DateTimeZone('UTC');
 

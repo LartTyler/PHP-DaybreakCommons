@@ -17,10 +17,13 @@
 		 *
 		 * @throws InvalidArgumentException if one or more enum class names collide with each other
 		 *
-		 * @param string $prefix     the prefix for all enums loaded this way; by default, enums are named after their class
+		 * @param string $prefix     the prefix for all enums loaded this way
 		 * @param string $paths,...  one or more fully-qualified namespaces of enums to load
 		 */
-		public function __construct($prefix = '', ... $paths) {
+		public function __construct($prefix/*, ... $paths */) {
+			$paths = func_get_args();
+			array_shift($paths);
+
 			foreach ($paths as $path)
 				if (EnumUtil::isEnumClass($path)) {
 					$name = explode('\\', $path);

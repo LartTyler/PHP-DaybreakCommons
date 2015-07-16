@@ -27,7 +27,7 @@
 		 * @param string $name 			the name of the enum being registered
 		 * @param mixed  $ctors,... 	zero or more arguments to be passed to the enum's constructor
 		 */
-		protected static function register($name, ... $ctors) {
+		protected static function register($name/* , ... $ctors */) {
 			$key = get_called_class();
 
 			if (static::isDone())
@@ -37,7 +37,17 @@
 			if (!array_key_exists($key, self::$types))
 				self::$types[$key] = array();
 
-			$inst = new $key(... $ctors);
+			$ctors = func_get_args();
+			array_shift($ctors);
+
+			$refl = new ReflectionClass($key);
+			$ctor = $refl->getConstructor();
+			$ctor->setAccessible(true);
+
+			$inst = $refl->newInstanceWithoutConstructor();
+
+			$ctor->invokeArgs($inst, $ctors);
+			$ctor->setAccessible(false);
 
 			$inst->setName($name);
 			$inst->setOrdinal(sizeof(self::$types[$key]));
