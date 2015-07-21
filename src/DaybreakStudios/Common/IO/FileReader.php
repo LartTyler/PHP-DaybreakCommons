@@ -11,6 +11,8 @@
 		protected $markLim = null;
 		protected $closed = false;
 
+		protected $hasRead = false;
+
 		public function __construct($file) {
 			if (is_string($file))
 				$file = fopen($file, 'r');
@@ -26,6 +28,14 @@
 		 * @return boolean true if the end of the stream has been reached
 		 */
 		public function eof() {
+			if (!$this->hasRead) {
+				$this->mark();
+
+				fgetc($this->handle);
+
+				$this->reset();
+			}
+
 			return feof($this->handle);
 		}
 
@@ -48,6 +58,8 @@
 		}
 
 		public function read() {
+			$this->hasRead = true;
+
 			if (!$this->ready())
 				throw new IOException(sprintf(self::ERR_READER_CLOSED, 'read'));
 
