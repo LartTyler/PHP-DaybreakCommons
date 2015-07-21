@@ -31,7 +31,10 @@
 			if (!$this->hasRead) {
 				$this->mark();
 
-				fgetc($this->handle);
+				$ret = fgetc($this->handle);
+
+				if ($ret === false)
+					return true;
 
 				$this->reset();
 			}
