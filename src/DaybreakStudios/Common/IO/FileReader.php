@@ -76,7 +76,7 @@
 		public function reset() {
 			if ($this->markPos === null)
 				throw new IOException('No mark to reset to');
-			else if (ftell($this->handle) > $this->markPos + $this->markLim)
+			else if ($this->markLim !== null && ftell($this->handle) > $this->markPos + $this->markLim)
 				throw new IOException('Stream has passed the mark limit');
 
 			fseek($this->handle, $this->markPos);
