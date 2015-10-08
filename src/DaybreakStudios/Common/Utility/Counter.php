@@ -21,6 +21,16 @@
 		}
 
 		/**
+		 * Retrieves a set of all keys currently used by the counter. This will not necessarily be the same set of keys
+		 * defined when running in strict mode, as any counter that has never been used will not have been initialized.
+		 *
+		 * @return Set a set containing all keys currently being used by the countyer
+		 */
+		public function keys() {
+			return $this->counts->keySet();
+		}
+
+		/**
 		 * Retrieves the current value of the given key.
 		 *
 		 * @param  mixed $key the key to retrieve
