@@ -9,7 +9,7 @@
 	/**
 	 * A Twig extension class that can be used to introduce enums into the Twig environment.
 	 */
-	class EnumExtension extends Twig_Extension {
+	class EnumExtension extends Twig_Extension_GlobalsInterface {
 		private $enums = array();
 
 		/**
