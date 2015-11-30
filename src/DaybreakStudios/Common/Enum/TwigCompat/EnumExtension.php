@@ -2,7 +2,7 @@
 	namespace DaybreakStudios\Common\Enum\TwigCompat;
 
 	use \InvalidArgumentException;
-	use \Twig_Extension;
+	use \Twig_Extension_GlobalsInterface;
 
 	use DaybreakStudios\Common\Enum\EnumUtil;
 
