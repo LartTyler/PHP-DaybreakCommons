@@ -2,6 +2,7 @@
 	namespace DaybreakStudios\Common\Enum\TwigCompat;
 
 	use \InvalidArgumentException;
+	use \Twig_Extension;
 	use \Twig_Extension_GlobalsInterface;
 
 	use DaybreakStudios\Common\Enum\EnumUtil;
@@ -9,7 +10,7 @@
 	/**
 	 * A Twig extension class that can be used to introduce enums into the Twig environment.
 	 */
-	class EnumExtension extends Twig_Extension_GlobalsInterface {
+	class EnumExtension extends Twig_Extension implements Twig_Extension_GlobalsInterface {
 		private $enums = array();
 
 		/**
