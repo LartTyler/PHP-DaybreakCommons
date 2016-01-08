@@ -44,6 +44,7 @@
 			$ctor = $refl->getConstructor();
 			$ctor->setAccessible(true);
 
+			/** @var Enum $inst */
 			$inst = $refl->newInstanceWithoutConstructor();
 
 			$ctor->invokeArgs($inst, $ctors);
@@ -72,8 +73,8 @@
 		/**
 		 * Gets the ordinal of an enum element.
 		 *
-		 * Element ordinals are determined by the order they are registered in. Ordinals are guarenteed
-		 * to be the same during a single runtime, but cannot be guarenteed to remain the same in later
+		 * Element ordinals are determined by the order they are registered in. Ordinals are guaranteed
+		 * to be the same during a single runtime, but cannot be guaranteed to remain the same in later
 		 * sessions.
 		 *
 		 * @return integer  the ordinal of the enum element
@@ -119,7 +120,7 @@
 		/**
 		 * Gets an array of all registered elements of the enum.
 		 *
-		 * @return array  an array containing all elements in the enum
+		 * @return static[] an array containing all elements in the enum
 		 */
 		public static final function values() {
 			if (!static::isDone())
@@ -141,7 +142,7 @@
 		 * string will be trimmed.
 		 *
 		 * @param  string $str the string to match to an enum element name
-		 * @return the matched enum element, or null if one could not be found
+		 * @return static|null the matched enum element, or null if one could not be found
 		 */
 		public static function valueOf($str) {
 			$key = get_called_class();
@@ -164,7 +165,7 @@
 		 * @throws OutOfBoundsException if $ordinal is could not be matched to an enum element
 		 *
 		 * @param  integer $ordinal the ordinal number to be retrieved
-		 * @return the matched enum element
+		 * @return static|null the matched enum element
 		 */
 		public static function fromOrdinal($ordinal) {
 			$key = get_called_class();
@@ -182,7 +183,7 @@
 
 		/**
 		 * @deprecated use the more succinct `done` method instead
-		 * See @see done()
+		 * @see done()
 		 */
 		protected static final function stopRegistration() {
 			static::done();
